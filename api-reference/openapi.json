@@ -19,9 +19,9 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/v1/b2c": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "MPESA B2C",
         "parameters": [
           {
             "name": "limit",
@@ -96,9 +96,9 @@
         }
       }
     },
-    "/plants/{id}": {
+    "/v1/b2c": {
       "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+        "description": "MPESA C2B",
         "parameters": [
           {
             "name": "id",
