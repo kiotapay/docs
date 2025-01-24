@@ -23,7 +23,7 @@
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://api.kiotapay.com"
+    "url": "https://kiotapay.co.ke"
   },
   "tabs": [
     {
@@ -38,7 +38,7 @@
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "",
       "pages": [
         "introduction",
         "quickstart",
