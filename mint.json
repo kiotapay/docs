@@ -29,18 +29,6 @@
     {
       "name": "API Reference",
       "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://api.kiotapay.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://www.kiotapay.co.ke/blogs"
     },
     {
       "name": "Blog",
@@ -50,7 +38,7 @@
   ],
   "navigation": [
     {
-      "group": "Start Here",
+      "group": "Get Started",
       "pages": [
         "introduction",
         "quickstart",
@@ -75,7 +63,7 @@
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Endpoints ",
       "pages": [
         "api-reference/endpoint/get",
         "api-reference/endpoint/create",
