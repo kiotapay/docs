@@ -2,43 +2,51 @@
 title: "Kiotapay Documentation"
 description: "Welcome to kiotapay user guide and API reference below
 
-Here you will find all the information and resources needed to seamlessly integrate with the Kiotapay API and unlock its full potential for your business.
-
-Dive deeper into our API reference to explore the comprehensive features and capabilities of the Kiotapay API. Whether you're facilitating collections, managing payouts, or accessing real-time transaction data, the Kiotapay API is designed to make integration easy and efficient.
+Whether you're facilitating collections, managing payouts, or accessing real-time transaction data, the Kiotapay API is designed to make integration easy and efficient.
 
 Start building today and discover how Kiotapay can power your payment operations!"
 ---
 
 ![](/Agentwithalaptop.png)
 
-## Setting up
+## Disbursement
 
-The first step to world-class test documentation is setting up your editing environments. From Kiotapay.
+APIs for mobile money and bank payouts
 
 <CardGroup cols={2}>
-  <Card title="Edit Your Docs" icon="pen-to-square" href="https://mintlify.com/docs/quickstart">
-    Get your docs set up locally for easy development
+  <Card title="MPESA B2C" icon="sparkles">
+    This API allows a merchant to transfer funds to a customer's mobile wallet
   </Card>
 
-  <Card title="Preview Changes" icon="image" href="https://mintlify.com/docs/development">
-    Preview your changes before you push to make sure they're perfect
+  <Card title="Card" icon="sparkles">
+    This API allows a merchant to transfer funds to a customer's bank account via Pesalink channel
+  </Card>
+
+  <Card title="MPESA B2B Paybill" icon="sparkles">
+    This API allows a merchant to transfer funds to a business MPESA paybill
+  </Card>
+
+  <Card title="MPESA B2B Till" icon="sparkles">
+    This API allows a merchant to transfer funds to a business MPESA paybill
   </Card>
 </CardGroup>
 
-## Make it yours
+![](/Acouplewithcoffee.png)
 
-Update your docs to your brand and add valuable content for the best user conversion.
+## **Collections**
+
+APIs for mobile money and bank collections.
 
 <CardGroup cols={2}>
-  <Card title="Customize Style" icon="palette" href="https://mintlify.com/docs/settings/global">
-    Customize your docs to your company's colors and brands
+  <Card title="Mpesa C2B Paybill" icon="palette" href="https://mintlify.com/docs/settings/global">
+    This API allows the merchants to receive payments through Kiotapay from customers who purchase their goods and services.
   </Card>
 
   <Card title="Reference APIs" icon="code" href="https://mintlify.com/docs/api-playground/openapi">
-    Automatically generate endpoints from an OpenAPI spec
+    This API allows merchants to collect bank payments on Kiotapay from their customers made through the bank channel.
   </Card>
 
-  <Card title="Get Inspiration" icon="stars" href="https://mintlify.com/customers">
-    Check out our showcase of our favorite documentation
+  <Card title="Mpesa C2B STK Push" icon="stars" href="https://mintlify.com/customers">
+    This API triggers a prompt on customer's phone containing amount, recipient details, account number. Transaction is completed by a pin in-put.
   </Card>
 </CardGroup>
