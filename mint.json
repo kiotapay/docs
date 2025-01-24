@@ -18,7 +18,7 @@
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:apps@kiotapay.com"
     }
   ],
   "topbarCtaButton": {
@@ -40,12 +40,12 @@
     {
       "name": "Community",
       "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "https://www.kiotapay.co.ke/blogs"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://www.kiotapay.co.ke/blogs"
     }
   ],
   "navigation": [
