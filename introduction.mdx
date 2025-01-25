@@ -79,27 +79,37 @@ Our **Disbursement APIs** are optimized for mobile money and bank payouts, ensur
   </Card>
 </CardGroup>
 
-## **API Architecture & Design Principles**
+## **Kiotapay API Architecture & Design Principles**
 
-Our API is designed to follow **RESTful** principles, ensuring it is easy to integrate, scalable, and maintainable. Here’s an overview of the key architectural features:
+Our Kiotapay API is designed with simplicity, reliability, and security at its core. We understand that businesses need an API that’s easy to integrate, works seamlessly, and ensures secure transactions for both you and your customers. Below is a breakdown of the key features and principles that make our API reliable and efficient for your payment needs.
 
-### 1. **Statelessness**:
-Every API request contains all the necessary information (e.g., authentication, parameters) to process the request. This makes it easier to scale and provides better fault tolerance.
+### 1. **Easy Integration**:
+We’ve built the Kiotapay API to be straightforward and easy to integrate with your business operations. Whether you're a small business or a large enterprise, you’ll find our API intuitive and well-documented. Getting up and running is quick, so you can start processing payments in no time.
 
-### 2. **Resource-Oriented**:
-Each API endpoint is designed to represent a specific resource (e.g., transactions, customers). The endpoints are logically grouped to ensure a clean and organized structure, enhancing readability and ease of use.
+### 2. **Secure Transactions**:
+Security is our top priority. Every interaction with our API is encrypted using **TLS** (Transport Layer Security), ensuring that your transactions are safe and protected from any unauthorized access. We use **OAuth2.0** for authentication, so only authorized users can make payments, giving you peace of mind.
 
-### 3. **Security**:
-Security is a top priority. All communication with the Kiotapay API is encrypted using **TLS** (Transport Layer Security). We also implement **OAuth2.0** for authentication and authorization, ensuring that only authorized users can access sensitive resources.
+### 3. **Reliability**:
+Our API is built to be highly reliable and available, ensuring that you can process payments 24/7 without interruptions. We have implemented best practices to ensure the system can handle large volumes of requests, even during peak times, while maintaining top-tier performance.
 
-### 4. **Versioning**:
-The API follows a clear versioning strategy, allowing backward compatibility with older versions while introducing new features and improvements. This ensures that integrations are not disrupted by updates.
+### 4. **Real-Time Processing**:
+The Kiotapay API processes payments in real time, so you can instantly confirm transactions. Whether it’s a **mobile money payout**, a **bank transfer**, or a **customer payment**, you can always be confident that the transaction has been successfully processed and that you have the necessary details.
 
-### 5. **Error Handling**:
-Our API returns meaningful error messages with appropriate HTTP status codes. For example, if a request is invalid, the response might be a `400 Bad Request` with a message explaining what went wrong.
+### 5. **Versioning & Backward Compatibility**:
+We ensure that our API is future-proof. Even as we release new features or updates, we maintain backward compatibility, meaning your integrations won’t break with new changes. You’ll always be able to use the latest features without worrying about disrupting your current setup.
 
-### 6. **Rate Limiting**:
-To protect the API from abuse and ensure fair usage, we have implemented **rate limiting**. Requests are throttled based on the rate limits set per endpoint, ensuring that no user can overwhelm the system.
+### 6. **Error Handling & Transparency**:
+In the rare case that something goes wrong with a payment, our API provides clear, actionable error messages. You’ll always know why a transaction failed and what you can do to fix it, helping you troubleshoot issues quickly and efficiently.
+
+### 7. **Rate Limiting for Fair Use**:
+To ensure that the API is accessible to all users, we apply **rate limiting**, which means there are set limits on how many requests can be made in a specific time period. This helps prevent overloads and ensures fair usage for everyone.
+
+---
+
+With these features, Kiotapay’s API gives you a reliable, secure, and easy-to-use solution for managing your payment needs, whether you’re accepting payments from customers, making payouts, or handling collections. We’ve designed the API to handle all of your transaction needs with speed and efficiency, allowing you to focus on growing your business.
+
+If you have any questions or need support, our team is here to assist you. Get in touch with us at [Kiotapay Support](mailto:apps@kiotapay.com) or visit our [Kiotapay Dashboard](https://kiotapay.co.ke).
+
 
 ## Why Choose Kiotapay?
 
