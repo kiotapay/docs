@@ -2,3 +2,27 @@
 title: 'MPESA B2C Send Money'
 openapi: 'POST /api/v1/b2c'
 ---
+
+
+## Request
+
+### Headers
+
+| Key           | Value             | Required |
+|---------------|-------------------|----------|
+| `Authorization` | `Bearer <your-token>` | ✅       |
+| `Content-Type`  | `application/json`    | ✅       |
+
+### Query Parameters
+
+| Parameter | Type   | Description          | Required |
+|-----------|--------|----------------------|----------|
+| `lang`    | string | Language of the message (e.g., `en`, `sw`) | ❌       |
+
+### Body
+
+```json
+{
+  "message": "Hello Zimele Twilio",
+  "to": "whatsapp:+254728762287"
+}
