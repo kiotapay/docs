@@ -68,6 +68,7 @@
         "api-reference/endpoint/b2c/post",
         "api-reference/endpoint/till/post",
         "api-reference/endpoint/till/get_status",
+        "api-reference/endpoint/till/get_single",
         "api-reference/endpoint/delete"
       ]
     }
