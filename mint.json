@@ -67,6 +67,7 @@
       "pages": [
         "api-reference/endpoint/b2c/post",
         "api-reference/endpoint/till/post",
+        "api-reference/endpoint/till/get_all",
         "api-reference/endpoint/delete"
       ]
     }
