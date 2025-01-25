@@ -6,23 +6,31 @@ openapi: 'POST /api/v1/b2c'
 
 ## Request
 
-### Headers
 
-| Key           | Value             | Required |
-|---------------|-------------------|----------|
-| `Authorization` | `Bearer <your-token>` | ✅       |
-| `Content-Type`  | `application/json`    | ✅       |
+### Base URL
 
-### Query Parameters
+`http://localhost:8081`
 
-| Parameter | Type   | Description          | Required |
-|-----------|--------|----------------------|----------|
-| `lang`    | string | Language of the message (e.g., `en`, `sw`) | ❌       |
+## Query Parameters
 
-### Body
+| Parameter   | Type     | Description                          | Required |
+|-------------|----------|--------------------------------------|----------|
+| `companyId` | `string` | The ID of the company initiating the transaction. | ✅       |
+
+## Request Headers
+
+| Key           | Value                   | Required |
+|---------------|-------------------------|----------|
+| `Content-Type` | `application/json`      | ✅       |
+
+## Request Body
 
 ```json
 {
-  "message": "Hello Zimele Twilio",
-  "to": "whatsapp:+254728762287"
+  "phoneNumber": "254745362174",
+  "amount": 1000,
+  "remarks": "Here are the remarks",
+  "occasion": "Here is the occasion",
+  "callbackUrl": "https://kiotapay.co.ke"
 }
+
