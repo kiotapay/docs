@@ -1,20 +1,19 @@
 ---
-title: 'Delete Plant'
-openapi: 'POST /api/v1/till'
+title: 'MPESA B2C Send Money'
+openapi: 'POST /api/v1/b2c'
 ---
 
-# Till New API
+# Send Money API
 
-This API allows a company to create a new spending transaction using their till (business) information.
+This API allows a company to send money to a recipient using their phone number.
 
 ## Endpoint
 
-POST /api/v1/auth/spending/till/new
-
+POST /api/v1/auth/spending/send-money/new
 
 ### Base URL
 
-`https://api.kiotapay.co`
+`httpa://api.kiotapay.co`
 
 ## Query Parameters
 
@@ -38,3 +37,4 @@ POST /api/v1/auth/spending/till/new
   "occasion": "Here is the occasion",
   "callbackUrl": "https://kiotapay.co.ke"
 }
+
