@@ -10,7 +10,7 @@ This API retrieves the details of a specific till transaction based on the `comp
 
 ## Endpoint
 
-GET /api/v1/auth/spending/till/single
+GET /api/v1/till/single
 
 
 ### Base URL
@@ -32,7 +32,7 @@ No headers are required for this endpoint.
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/auth/spending/till/single"
+  url="https://api.kiotapay.co/api/v1/till/single"
   queryParameters={[
     {
       name: "companyId",
@@ -54,4 +54,4 @@ No headers are required for this endpoint.
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
+curl --location 'https://api.kiotapay.co/api/v1/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
