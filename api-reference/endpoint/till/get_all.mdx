@@ -1,0 +1,49 @@
+---
+title: Get All Till Payments API
+description: Fetches all till payments for a specific company using the `companyId`.
+openapi: 'GET /api/v1/till/all'
+---
+
+# Get All Till Payments API
+
+This API retrieves the list of all till payments for the given `companyId`.
+
+## Endpoint
+
+GET /api/v1/auth/spending/till/all
+
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## Query Parameters
+
+| Parameter   | Type     | Description                         | Required |
+|-------------|----------|-------------------------------------|----------|
+| `companyId` | `string` | The ID of the company to fetch till payments for. | ✅       |
+
+## Request Headers
+
+No headers are required for this endpoint.
+
+## Interactive API
+
+<InteractiveApi
+  method="GET"
+  url="https://api.kiotapay.co/api/v1/auth/spending/till/all"
+  queryParameters={[
+    {
+      name: "companyId",
+      type: "string",
+      description: "The ID of the company to fetch till payments for.",
+      required: true,
+      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+    }
+  ]}
+/>
+
+## Example Curl Request
+
+```bash
+curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
