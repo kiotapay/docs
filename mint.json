@@ -66,6 +66,7 @@
       "group": "Endpoints ",
       "pages": [
         "api-reference/endpoint/b2c/post",
+        "api-reference/endpoint/b2c/get_single",
         "api-reference/endpoint/till/post",
         "api-reference/endpoint/till/get_status",
         "api-reference/endpoint/till/get_single",
