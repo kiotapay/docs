@@ -10,7 +10,7 @@ This API retrieves the list of all till payments for the given `companyId`.
 
 ## Endpoint
 
-GET /api/v1/auth/spending/till/all
+GET /api/v1/till/all
 
 
 ### Base URL
@@ -31,7 +31,7 @@ No headers are required for this endpoint.
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/auth/spending/till/all"
+  url="https://api.kiotapay.co/api/v1/till/all"
   queryParameters={[
     {
       name: "companyId",
@@ -46,4 +46,4 @@ No headers are required for this endpoint.
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+curl --location 'https://api.kiotapay.co/api/v1/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
