@@ -1,7 +1,7 @@
 ---
 title: Get All Send Money Transactions API
 description: Retrieves all send money transactions for the specified company.
-openapi: 'GET /api/v1/auth/spending/send-money/org/all'
+openapi: 'GET /api/v1/send-money/all'
 ---
 
 # Get All Send Money Transactions API
@@ -10,7 +10,7 @@ This API retrieves all send money transactions for a given `companyId`.
 
 ## Endpoint
 
-GET /api/v1/auth/spending/send-money/org/all
+GET /api/v1/send-money/all
 
 
 ### Base URL
@@ -31,7 +31,7 @@ No headers are required for this endpoint.
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/auth/spending/send-money/org/all"
+  url="https://api.kiotapay.co/api/v1/send-money/all"
   queryParameters={[
     {
       name: "companyId",
@@ -46,4 +46,4 @@ No headers are required for this endpoint.
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/auth/spending/send-money/org/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+curl --location 'https://api.kiotapay.co/api/v1/send-money/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
