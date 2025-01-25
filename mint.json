@@ -69,6 +69,7 @@
         "api-reference/endpoint/till/post",
         "api-reference/endpoint/till/get_status",
         "api-reference/endpoint/till/get_single",
+        "api-reference/endpoint/till/get_all",
         "api-reference/endpoint/delete"
       ]
     }
