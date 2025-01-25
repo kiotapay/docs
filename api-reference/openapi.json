@@ -20,7 +20,7 @@
   ],
   "paths": {
     "api/v1/b2c": {
-      "get": {
+      "post": {
         "description": "MPESA B2C Send Money",
         "parameters": [
           {
