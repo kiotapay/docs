@@ -1,0 +1,40 @@
+---
+title: 'Delete Plant'
+openapi: 'POST /api/v1/till'
+---
+
+# Send Money API
+
+This API allows a company to send money to a recipient using their phone number.
+
+## Endpoint
+
+POST /api/v1/auth/spending/send-money/new
+
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## Query Parameters
+
+| Parameter   | Type     | Description                          | Required |
+|-------------|----------|--------------------------------------|----------|
+| `companyId` | `string` | The ID of the company initiating the transaction. | ✅       |
+
+## Request Headers
+
+| Key           | Value                   | Required |
+|---------------|-------------------------|----------|
+| `Content-Type` | `application/json`      | ✅       |
+
+## Request Body
+
+```json
+{
+  "phoneNumber": "254745362174",
+  "amount": 1000,
+  "remarks": "Here are the remarks",
+  "occasion": "Here is the occasion",
+  "callbackUrl": "https://kiotapay.co.ke"
+}
