@@ -1,0 +1,57 @@
+---
+title: Single Till Transaction API
+description: Fetches details of a single till transaction using the `companyId` and `requestId`.
+openapi: 'GET /api/v1/till/single'
+---
+
+# Single Till Transaction API
+
+This API retrieves the details of a specific till transaction based on the `companyId` and `requestId` provided.
+
+## Endpoint
+
+GET /api/v1/auth/spending/till/single
+
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## Query Parameters
+
+| Parameter   | Type     | Description                          | Required |
+|-------------|----------|--------------------------------------|----------|
+| `companyId` | `string` | The ID of the company initiating the request. | ✅       |
+| `requestId` | `string` | The unique ID of the request for the till transaction. | ✅       |
+
+## Request Headers
+
+No headers are required for this endpoint.
+
+## Interactive API
+
+<InteractiveApi
+  method="GET"
+  url="https://api.kiotapay.co/api/v1/auth/spending/till/single"
+  queryParameters={[
+    {
+      name: "companyId",
+      type: "string",
+      description: "The ID of the company initiating the request.",
+      required: true,
+      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+    },
+    {
+      name: "requestId",
+      type: "string",
+      description: "The unique ID of the request for the till transaction.",
+      required: true,
+      example: "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57"
+    }
+  ]}
+/>
+
+## Example Curl Request
+
+```bash
+curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
