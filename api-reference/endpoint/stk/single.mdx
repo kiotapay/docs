@@ -1,0 +1,47 @@
+---
+title: 'Get Single STK Collection'
+openapi: 'GET /api/v1/stk/single'
+---
+
+# Get Single STK Collection API
+
+This API retrieves the details of a single STK collection transaction using the provided `companyId` and `requestId`.
+
+---
+
+## **Endpoint**
+
+`GET /api/v1/stk/single`
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+## **Query Parameters**
+
+| Parameter    | Type     | Description                                        | Required |
+|--------------|----------|----------------------------------------------------|----------|
+| `companyId`  | `string` | The ID of the company associated with the transaction. | ✅       |
+| `requestId`  | `string` | The unique identifier for the specific transaction.   | ✅       |
+
+---
+
+## **Request Headers**
+
+| Key            | Value              | Required |
+|-----------------|--------------------|----------|
+| `Content-Type` | `application/json` | ✅       |
+
+---
+
+## **Example Request**
+
+### **cURL Command**
+
+```bash
+curl --location 'https://api.kiotapay.co/api/v1/stk/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=43d23a1d-0476-4d49-a6eb-0a402c50d968' \
+--header 'Content-Type: application/json'
