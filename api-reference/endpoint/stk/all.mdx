@@ -1,0 +1,46 @@
+---
+title: 'Get All STK Collections'
+openapi: 'GET /api/v1/stk/all'
+---
+
+# Get All STK Collections API
+
+This API retrieves all STK (Sim Toolkit) collection transactions for a specific company.
+
+---
+
+## **Endpoint**
+
+`GET /api/v1/stk/all`
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+## **Query Parameters**
+
+| Parameter    | Type     | Description                                        | Required |
+|--------------|----------|----------------------------------------------------|----------|
+| `companyId`  | `string` | The ID of the company whose STK transactions are being queried. | ✅       |
+
+---
+
+## **Request Headers**
+
+| Key            | Value              | Required |
+|-----------------|--------------------|----------|
+| `Content-Type` | `application/json` | ✅       |
+
+---
+
+## **Example Request**
+
+### **cURL Command**
+
+```bash
+curl --location 'https://api.kiotapay.co/api/v1/stk/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4' \
+--header 'Content-Type: application/json'
