@@ -27,26 +27,52 @@
   },
   "navigation": [
     {
-      "group": "",
+      "group": "Overview",
       "pages": [
         "introduction",
         "quickstart",
-        "development",
+        "development"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "pages": [
         "essentials/markdown",
         "essentials/code",
         "essentials/images",
         "essentials/settings",
         "essentials/navigation",
-        "essentials/reusable-snippets",
-        "api-reference/introduction",
+        "essentials/reusable-snippets"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Endpoints",
+      "subgroup": "Mobile Money (B2C)",
+      "pages": [
         "api-reference/endpoint/b2c/post",
         "api-reference/endpoint/b2c/get_single",
         "api-reference/endpoint/b2c/get_status",
-        "api-reference/endpoint/b2c/get_all",
+        "api-reference/endpoint/b2c/get_all"
+      ]
+    },
+    {
+      "subgroup": "Business Payments (Till)",
+      "pages": [
         "api-reference/endpoint/till/post",
         "api-reference/endpoint/till/get_status",
         "api-reference/endpoint/till/get_single",
-        "api-reference/endpoint/till/get_all",
+        "api-reference/endpoint/till/get_all"
+      ]
+    },
+    {
+      "group": "Other",
+      "pages": [
         "api-reference/endpoint/delete"
       ]
     }
