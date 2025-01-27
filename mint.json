@@ -52,8 +52,7 @@
       ]
     },
     {
-      "group": "Endpoints",
-      "subgroup": "Mobile Money (B2C)",
+      "group": "Mobile Money (B2C)",
       "pages": [
         "api-reference/endpoint/b2c/post",
         "api-reference/endpoint/b2c/get_single",
@@ -62,7 +61,7 @@
       ]
     },
     {
-      "subgroup": "Business Payments (Till)",
+      "group": "Business Payments (Till)",
       "pages": [
         "api-reference/endpoint/till/post",
         "api-reference/endpoint/till/get_status",
@@ -71,7 +70,7 @@
       ]
     },
       {
-      "subgroup": "Business Payments (Paybill)",
+      "group": "Business Payments (Paybill)",
       "pages": [
         "api-reference/endpoint/paybill/post",
         "api-reference/endpoint/paybill/get_status",
@@ -80,7 +79,7 @@
       ]
     },
       {
-      "subgroup": "Collections (STK Push)",
+      "group": "Collections (STK Push)",
       "pages": [
         "api-reference/endpoint/stk/post",
         "api-reference/endpoint/stk/status",
