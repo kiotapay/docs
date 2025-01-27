@@ -1,0 +1,43 @@
+---
+title: 'Initiate STK Push Collection'
+openapi: 'POST /api/v1/stk/new'
+---
+
+# STK Push Collection API
+
+This API allows a company to initiate an STK (Sim Toolkit) push collection for mobile payments.
+
+---
+
+## **Endpoint**
+
+`POST /api/v1/stk/new`
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+## **Request Headers**
+
+| Key            | Value              | Required |
+|-----------------|--------------------|----------|
+| `Content-Type` | `application/json` | ✅       |
+
+---
+
+## **Request Body**
+
+The body must contain the following fields:
+
+```json
+{
+    "description": "Here is the description",
+    "phoneNumber": "0745362174",
+    "amount": 10,
+    "accountReference": "Here is the reference",
+    "callbackUrl": "https://kiotapay.co.ke"
+}
