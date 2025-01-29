@@ -1,0 +1,53 @@
+---
+title: "Get API Token"
+description: "Learn how to obtain an access token using your API key and secret."
+openapi: 'GET /api/v1/auth/token'
+---
+
+## **Get API Token**
+
+This API endpoint allows users to obtain an access token by passing their **API key** and **API secret** in a POST request. The returned token should be used to authenticate subsequent API requests by including it in the `Authorization` header.
+
+---
+
+### **Endpoint**
+
+```http
+POST /api/v1/auth/token
+
+```
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+### **Request Headers**
+
+| Key             | Value                  | Required | Description |
+|----------------|------------------------|----------|-------------|
+| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
+
+
+### Request Body
+
+```json
+{
+    "apiKey": "apikey",
+    "apiSecret": "apisecret"
+}
+```
+
+### Response
+
+```json
+{
+    "status": "200 OK",
+    "data": {
+        "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMY3BXbEt5QmMwRn...",
+        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICIxMzU5NjllZS1hYWM...",
+        "expires_in": 300,
+        "refresh_expires_in": 1800
+    }
+}
+
+```
