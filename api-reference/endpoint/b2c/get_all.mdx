@@ -32,11 +32,11 @@ GET /api/v1/send-money/all
   url="https://api.kiotapay.co/api/v1/send-money/all"
   queryParameters={[
 {
-  name: "companyId",
-  type: "string",
-  description: "The ID of the company whose send money transactions are to be fetched.",
-  required: true,
-  example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+name: "companyId",
+type: "string",
+description: "The ID of the company whose send money transactions are to be fetched.",
+required: true,
+example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
 }
 ]}
 />
@@ -47,40 +47,94 @@ GET /api/v1/send-money/all
 curl --location 'https://api.kiotapay.co/api/v1/send-money/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
 ```
 
-**Example Body**
-
-```json
-{
-
-    "phoneNumber":"254745362174",
-    "amount":1000,
-    "remarks":"Here are the remarks",
-    "occasion":"Here is the occassion",
-    "callbackUrl":"https://kiotapay.co.ke"
-}
-```
-
-**Explanation:**
-
-| Field Name  | Type   | Description                                                                                                                                                                               |
-| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| phoneNumber | String | The recipient's phone number in **international format** without the `+` sign. Example: `254745362174` (for a Kenyan number).                                                             |
-| amount      | Number | The amount of money to be sent in **Kenyan Shillings (KES)**. Example: `1000`.                                                                                                            |
-| remarks     | String | A brief **transaction description** (optional but recommended). Example: `"Here are the remarks"`.                                                                                        |
-| occasion    | String | A short text describing the **purpose of the transaction** (optional). Example: `"Here is the occasion"`                                                                                  |
-| callbackUrl | String | The **URL where transaction results** will be sent as a JSON callback. This must be a publicly accessible endpoint. It should be a **POST method.**  Example: `"https://kiotapay.co.ke"`. |
-
 **Example Response**
 
 ```json
 {
-    "status": 201,
+    "status": 200,
     "message": "Success",
-    "data": {
-        "requestId": "fb89a98f-20a9-4a7a-9bb2-bf7ca478f644",
-        "amount": 1000.0,
-        "phoneNumber": "254745362174",
-        "status": "PENDING"
-    }
+    "data": [
+        {
+            "id": 2,
+            "amount": 1000.0,
+            "uuid": "70494779-cb4c-4138-8ba8-28be0a6fb987",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "phoneNumber": "254745362174",
+            "remarks": "Here are the remarks",
+            "occasion": null,
+            "originatorConversationId": "a76019cb-4ea5-4921-9a89-5f56aecac92e",
+            "conversationId": "",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-24T16:26:21.69219",
+            "updatedAt": "2025-01-24T16:26:21.69219",
+            "status": "PENDING",
+            "responseCode": 0,
+            "receiverName": null,
+            "transactionReceipt": null
+        },
+        {
+            "id": 3,
+            "amount": 1000.0,
+            "uuid": "cd3e5b37-8f23-465e-a720-b2a78f2b62c1",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "phoneNumber": "254745362174",
+            "remarks": "Here are the remarks",
+            "occasion": null,
+            "originatorConversationId": "7ad84f2f-4f0b-4110-afac-2009f07f531a",
+            "conversationId": "",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-24T16:28:00.319643",
+            "updatedAt": "2025-01-24T16:28:00.319643",
+            "status": "PENDING",
+            "responseCode": 0,
+            "receiverName": null,
+            "transactionReceipt": null
+        },
+        {
+            "id": 4,
+            "amount": 1000.0,
+            "uuid": "fb89a98f-20a9-4a7a-9bb2-bf7ca478f644",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "phoneNumber": "254745362174",
+            "remarks": "Here are the remarks",
+            "occasion": null,
+            "originatorConversationId": "540c0a05-11e1-4f00-b66f-6691502cc80a",
+            "conversationId": "",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-29T20:33:22.196554",
+            "updatedAt": "2025-01-29T20:33:22.196554",
+            "status": "PENDING",
+            "responseCode": 0,
+            "receiverName": null,
+            "transactionReceipt": null
+        }
+    ]
 }
 ```
