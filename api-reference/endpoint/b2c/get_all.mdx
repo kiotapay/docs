@@ -1,8 +1,4 @@
----
-title: Get All Send Money Transactions API
-description: Retrieves all send money transactions for the specified company.
-openapi: 'GET /api/v1/send-money/all'
----
+###
 
 # Get All Send Money Transactions API
 
@@ -12,24 +8,22 @@ This API retrieves all send money transactions for a given `companyId`.
 
 GET /api/v1/send-money/all
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                         | Required |
-|-------------|----------|-------------------------------------|----------|
-| `companyId` | `string` | The ID of the company whose send money transactions are to be fetched. | ✅       |
+| Parameter   | Type     | Description                                                            | Required |
+| ----------- | -------- | ---------------------------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company whose send money transactions are to be fetched. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Interactive API
 
@@ -37,17 +31,56 @@ GET /api/v1/send-money/all
   method="GET"
   url="https://api.kiotapay.co/api/v1/send-money/all"
   queryParameters={[
-    {
-      name: "companyId",
-      type: "string",
-      description: "The ID of the company whose send money transactions are to be fetched.",
-      required: true,
-      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-    }
-  ]}
+{
+  name: "companyId",
+  type: "string",
+  description: "The ID of the company whose send money transactions are to be fetched.",
+  required: true,
+  example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+}
+]}
 />
 
 ## Example Curl Request
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/send-money/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+```
+
+**Example Body**
+
+```json
+{
+
+    "phoneNumber":"254745362174",
+    "amount":1000,
+    "remarks":"Here are the remarks",
+    "occasion":"Here is the occassion",
+    "callbackUrl":"https://kiotapay.co.ke"
+}
+```
+
+**Explanation:**
+
+| Field Name  | Type   | Description                                                                                                                                                                               |
+| ----------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| phoneNumber | String | The recipient's phone number in **international format** without the `+` sign. Example: `254745362174` (for a Kenyan number).                                                             |
+| amount      | Number | The amount of money to be sent in **Kenyan Shillings (KES)**. Example: `1000`.                                                                                                            |
+| remarks     | String | A brief **transaction description** (optional but recommended). Example: `"Here are the remarks"`.                                                                                        |
+| occasion    | String | A short text describing the **purpose of the transaction** (optional). Example: `"Here is the occasion"`                                                                                  |
+| callbackUrl | String | The **URL where transaction results** will be sent as a JSON callback. This must be a publicly accessible endpoint. It should be a **POST method.**  Example: `"https://kiotapay.co.ke"`. |
+
+**Example Response**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "requestId": "fb89a98f-20a9-4a7a-9bb2-bf7ca478f644",
+        "amount": 1000.0,
+        "phoneNumber": "254745362174",
+        "status": "PENDING"
+    }
+}
+```
