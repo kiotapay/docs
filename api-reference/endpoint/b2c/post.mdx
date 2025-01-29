@@ -13,21 +13,20 @@ POST /api/v1/send-money
 
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                          | Required |
-|-------------|----------|--------------------------------------|----------|
-| `companyId` | `string` | The ID of the company initiating the transaction. | ✅       |
+| Parameter   | Type     | Description                                       | Required |
+| ----------- | -------- | ------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company initiating the transaction. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Request Body
 
@@ -39,4 +38,29 @@ POST /api/v1/send-money
   "occasion": "Here is the occasion",
   "callbackUrl": "https://kiotapay.co.ke"
 }
+```
 
+**Explanation**
+
+| Field       | Type   | Description                                                                                                                  |
+| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| phoneNumber | String | The recipient's phone number in **international format.**  It must  be a **valid registered  Kenyan phone number.**          |
+| amount      | Number | The amount of money to be sent in **Kenyan Shillings (KES)**. Example: `1000`.                                               |
+| remarks     | String | A brief **transaction description** . Example: `"Here are the remarks"`.                                                     |
+| occasion    | String | A short text describing the **purpose of the transaction**. Example: `"Here is the occasion"`                                |
+| callbackUrl | String | A **publicly accessible POST API endpoint** where **transaction results will be sent**. Example: `"https://kiotapay.co.ke"`. |
+
+**Response**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "requestId": "fb89a98f-20a9-4a7a-9bb2-bf7ca478f644",
+        "amount": 1000.0,
+        "phoneNumber": "254745362174",
+        "status": "PENDING"
+    }
+}
+```
