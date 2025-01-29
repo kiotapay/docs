@@ -12,25 +12,23 @@ This API retrieves the status of a send money transaction using the given `compa
 
 GET /api/v1/send-money/status
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                         | Required |
-|-------------|----------|-------------------------------------|----------|
-| `companyId` | `string` | The ID of the company requesting the status of the send money transaction. | ✅       |
-| `requestId` | `string` | The unique ID of the send money transaction. | ✅       |
+| Parameter   | Type     | Description                                                                | Required |
+| ----------- | -------- | -------------------------------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company requesting the status of the send money transaction. | ✅        |
+| `requestId` | `string` | The unique ID of the send money transaction.                               | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Interactive API
 
@@ -38,24 +36,40 @@ GET /api/v1/send-money/status
   method="GET"
   url="https://api.kiotapay.co/api/v1/send-money/status"
   queryParameters={[
-    {
-      name: "companyId",
-      type: "string",
-      description: "The ID of the company requesting the status of the send money transaction.",
-      required: true,
-      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-    },
-    {
-      name: "requestId",
-      type: "string",
-      description: "The unique ID of the send money transaction.",
-      required: true,
-      example: "cd3e5b37-8f23-465e-a720-b2a78f2b62c1"
-    }
-  ]}
+  {
+    name: "companyId",
+    type: "string",
+    description: "The ID of the company requesting the status of the send money transaction.",
+    required: true,
+    example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+  },
+  {
+    name: "requestId",
+    type: "string",
+    description: "The unique ID of the send money transaction.",
+    required: true,
+    example: "cd3e5b37-8f23-465e-a720-b2a78f2b62c1"
+  }
+]}
 />
 
 ## Example Curl Request
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/send-money/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=cd3e5b37-8f23-465e-a720-b2a78f2b62c1'
+```
+
+**Example Response**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": {
+        "requestId": "cd3e5b37-8f23-465e-a720-b2a78f2b62c1",
+        "phoneNumber": "254745362174",
+        "status": "PENDING",
+        "amount": 1000.0
+    }
+}
+```
