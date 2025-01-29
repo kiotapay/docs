@@ -24,9 +24,13 @@ GET /api/v1/till/status
 | `companyId` | `string` | The ID of the company initiating the request. | ✅       |
 | `requestId` | `string` | The unique ID of the request for which the status is being checked. | ✅       |
 
-## Request Headers
+## **Request Headers**
 
-No headers required for this endpoint.
+| Key             | Value                  | Required | Description |
+|----------------|------------------------|----------|-------------|
+| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
+| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+
 
 ## Interactive API
 

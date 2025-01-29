@@ -24,9 +24,13 @@ GET /api/v1/send-money/single
 | `companyId` | `string` | The ID of the company to fetch the send money transaction for. | ✅       |
 | `requestId` | `string` | The unique ID of the specific send money transaction. | ✅       |
 
-## Request Headers
+## **Request Headers**
 
-No headers are required for this endpoint.
+| Key             | Value                  | Required | Description |
+|----------------|------------------------|----------|-------------|
+| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
+| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+
 
 ## Interactive API
 
