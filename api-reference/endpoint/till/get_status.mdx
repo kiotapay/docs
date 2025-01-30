@@ -12,25 +12,23 @@ This API allows a company to fetch the status of a specific till transaction usi
 
 GET /api/v1/till/status
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                          | Required |
-|-------------|----------|--------------------------------------|----------|
-| `companyId` | `string` | The ID of the company initiating the request. | ✅       |
-| `requestId` | `string` | The unique ID of the request for which the status is being checked. | ✅       |
+| Parameter   | Type     | Description                                                         | Required |
+| ----------- | -------- | ------------------------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company initiating the request.                       | ✅        |
+| `requestId` | `string` | The unique ID of the request for which the status is being checked. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Interactive API
 
@@ -38,24 +36,41 @@ GET /api/v1/till/status
   method="GET"
   url="https://api.kiotapay.co/api/v1/auth/spending/till/status"
   queryParameters={[
-    {
-      name: "companyId",
-      type: "string",
-      description: "The ID of the company initiating the request.",
-      required: true,
-      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-    },
-    {
-      name: "requestId",
-      type: "string",
-      description: "The unique ID of the request for which the status is being checked.",
-      required: true,
-      example: "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57"
-    }
-  ]}
+  {
+    name: "companyId",
+    type: "string",
+    description: "The ID of the company initiating the request.",
+    required: true,
+    example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+  },
+  {
+    name: "requestId",
+    type: "string",
+    description: "The unique ID of the request for which the status is being checked.",
+    required: true,
+    example: "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57"
+  }
+]}
 />
 
 ## Example Curl Request
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
+```
+
+**Sample Response**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "accountNumber": "435567676",
+        "businessNumber": "12345",
+        "requestId": "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57",
+        "amount": 1000.0,
+        "status": "PENDING"
+    }
+}
+```

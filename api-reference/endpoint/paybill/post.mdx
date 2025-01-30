@@ -7,37 +7,36 @@ openapi: 'POST /api/v1/paybill'
 
 This API allows a company to create a new spending transaction using Paybill (business) information.
 
----
+***
 
 ## **Endpoint**
 
 `POST /api/v1/paybill`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Query Parameters**
 
-| Parameter    | Type     | Description                                     | Required |
-|--------------|----------|-------------------------------------------------|----------|
-| `companyId`  | `string` | The ID of the company initiating the transaction. | ✅       |
+| Parameter   | Type     | Description                                       | Required |
+| ----------- | -------- | ------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company initiating the transaction. | ✅        |
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Request Body**
 
@@ -52,3 +51,31 @@ The body must contain the following fields:
   "occasion": "Here is the occasion",
   "callbackUrl": "https://kiotapay.co.ke"
 }
+```
+
+**Explanation**
+
+| **Field**      | Type   | Description                                                   |
+| -------------- | ------ | ------------------------------------------------------------- |
+| businessNumber | String | The **Paybill**  number associated with the receiver.         |
+| accountNumber  | String | The account number associated with the receipient's paybill   |
+| amount         | Number | The amount to be transacted in the Kenyan Shillings currency. |
+| remarks        | String | Additional information about the transaction.                 |
+| occasion       | String | A description or purpose for the transaction.                 |
+| callbackUrl    | String | A valid **POST** URL where payment confirmation will be sent. |
+
+**Response**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "requestId": "8fa1fab3-a1d6-41fd-9199-d5517efc0d41",
+        "accountNumber": "22442244",
+        "businessNumber": "2232334",
+        "amount": 1000.0,
+        "status": "PENDING"
+    }
+}
+```

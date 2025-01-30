@@ -7,37 +7,36 @@ openapi: 'GET /api/v1/paybill/all'
 
 This API retrieves all Paybill transactions for a specific company.
 
----
+***
 
 ## **Endpoint**
 
 `GET /api/v1/paybill/all`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Query Parameters**
 
-| Parameter    | Type     | Description                                      | Required |
-|--------------|----------|--------------------------------------------------|----------|
-| `companyId`  | `string` | The ID of the company whose transactions are being queried. | ✅       |
+| Parameter   | Type     | Description                                                 | Required |
+| ----------- | -------- | ----------------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company whose transactions are being queried. | ✅        |
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Example Request**
 
@@ -45,3 +44,44 @@ This API retrieves all Paybill transactions for a specific company.
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/paybill/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+```
+
+**Sample Body**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": [
+        {
+            "id": 2,
+            "amount": 1000.0,
+            "uuid": "4f88dd2e-c4b4-4a3f-9605-1679686a6641",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "accountNumber": "22442244",
+            "businessNumber": "2232334",
+            "remarks": "here are the remarks",
+            "occasion": "Here are the remarks",
+            "originatorConversationId": "b2b155b6-f610-453c-845e-3a933ad33875",
+            "conversationId": "AG_20230420_2010759fd5662ef6d054",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-27T12:35:46.823816",
+            "updatedAt": "2025-01-30T12:08:00.877177",
+            "status": "PENDING",
+            "responseCode": 0,
+            "receiverName": null,
+            "responseDescription": "Accept the service request successfully.",
+            "transactionReceipt": null
+        }
+    ]
+}
+```

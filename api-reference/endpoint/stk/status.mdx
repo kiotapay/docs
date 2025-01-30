@@ -7,38 +7,37 @@ openapi: 'GET /api/v1/stk/status'
 
 This API retrieves the status of a single STK transaction using the provided `companyId` and `requestId`.
 
----
+***
 
 ## **Endpoint**
 
 `GET /api/v1/stk/status`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Query Parameters**
 
-| Parameter    | Type     | Description                                        | Required |
-|--------------|----------|----------------------------------------------------|----------|
-| `companyId`  | `string` | The ID of the company associated with the transaction. | ✅       |
-| `requestId`  | `string` | The unique identifier for the specific transaction.   | ✅       |
+| Parameter   | Type     | Description                                            | Required |
+| ----------- | -------- | ------------------------------------------------------ | -------- |
+| `companyId` | `string` | The ID of the company associated with the transaction. | ✅        |
+| `requestId` | `string` | The unique identifier for the specific transaction.    | ✅        |
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Example Request**
 
@@ -47,3 +46,19 @@ This API retrieves the status of a single STK transaction using the provided `co
 ```bash
 curl --location 'https://api.kiotapay.co/api/api/v1/stk/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=43d23a1d-0476-4d49-a6eb-0a402c50d968' \
 --header 'Content-Type: application/json'
+```
+
+**Sample Response**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": {
+        "requestId": "43d23a1d-0476-4d49-a6eb-0a402c50d968",
+        "status": "PENDING",
+        "amount": 10,
+        "phoneNumber": "0745362174"
+    }
+}
+```

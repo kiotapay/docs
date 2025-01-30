@@ -7,38 +7,37 @@ openapi: 'GET /api/v1/stk/single'
 
 This API retrieves the details of a single STK collection transaction using the provided `companyId` and `requestId`.
 
----
+***
 
 ## **Endpoint**
 
 `GET /api/v1/stk/single`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Query Parameters**
 
-| Parameter    | Type     | Description                                        | Required |
-|--------------|----------|----------------------------------------------------|----------|
-| `companyId`  | `string` | The ID of the company associated with the transaction. | ✅       |
-| `requestId`  | `string` | The unique identifier for the specific transaction.   | ✅       |
+| Parameter   | Type     | Description                                            | Required |
+| ----------- | -------- | ------------------------------------------------------ | -------- |
+| `companyId` | `string` | The ID of the company associated with the transaction. | ✅        |
+| `requestId` | `string` | The unique identifier for the specific transaction.    | ✅        |
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Example Request**
 
@@ -47,3 +46,40 @@ This API retrieves the details of a single STK collection transaction using the 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/stk/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=43d23a1d-0476-4d49-a6eb-0a402c50d968' \
 --header 'Content-Type: application/json'
+```
+
+**Sample Response**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": {
+        "id": 1,
+        "uuid": "43d23a1d-0476-4d49-a6eb-0a402c50d968",
+        "merchantRequestId": "29115-34620561-1",
+        "checkoutRequestId": "ws_CO_191220191020363925",
+        "phoneNumber": "0745362174",
+        "description": "Here is the description",
+        "organisation": {
+            "id": 2,
+            "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+            "name": "Maina Properties Limited Ke",
+            "phoneNumber": "254745362174",
+            "email": "maina@gmail.com",
+            "uniqueReference": "4780606",
+            "createdAt": "2025-01-24T13:35:12.151225",
+            "updatedAt": "2025-01-24T13:35:12.151225"
+        },
+        "amount": 10,
+        "status": "PENDING",
+        "accountReference": "Here is the reference",
+        "responseCode": 0,
+        "responseDescription": "Success. Request accepted for processing",
+        "customerMessage": "Success. Request accepted for processing",
+        "callbackUrl": "https://kiotapay.co.ke",
+        "createdAt": "2025-01-27T11:05:17.867373",
+        "updatedAt": "2025-01-30T11:00:00.633493"
+    }
+}
+```

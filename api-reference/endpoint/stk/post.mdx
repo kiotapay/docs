@@ -7,29 +7,28 @@ openapi: 'POST /api/v1/stk/new'
 
 This API allows a company to initiate an STK (Sim Toolkit) push collection for mobile payments.
 
----
+***
 
 ## **Endpoint**
 
 `POST /api/v1/stk/new`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Request Body**
 
@@ -43,3 +42,28 @@ The body must contain the following fields:
     "accountReference": "Here is the reference",
     "callbackUrl": "https://kiotapay.co.ke"
 }
+```
+
+**Explanation**
+
+| Field            | Type    | Description                                                                                                                                                                                                                                                                                                 |
+| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| description      | String  | This is any additional information/comment that can be sent along with the request from your system. Maximum of 13 Characters.                                                                                                                                                                              |
+| phoneNumber      | String  | A valid phone number where the push will be sen&#x74;**.**  It must  be a **valid registered  Kenyan phone number.**                                                                                                                                                                                        |
+| amount           | Integer | This is the Amount transacted normally a numeric value. Money that the customer pays to the Shortcode. Only whole numbers are supported.                                                                                                                                                                    |
+| accountReference | String  | Account Reference: This is an Alpha-Numeric parameter that is defined by your system as an Identifier of the transaction for the CustomerPayBillOnline transaction type. Along with the business name, this value is also displayed to the customer in the STK Pin Prompt message. Maximum of 12 characters |
+| callbackUrl      | String  | A valid **POST**  url where the callback will be sent                                                                                                                                                                                                                                                       |
+
+**Sample Response**
+
+```json
+{
+    "status": 201,
+    "message": "Stk request has been accepted for request",
+    "data": {
+        "requestId": "4dc43b5a-d43f-4b0e-b677-3a6167d2c654",
+        "phoneNumber": "0745362174",
+        "requestedAmount": 10.0
+    }
+}
+```

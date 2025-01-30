@@ -12,24 +12,22 @@ This API retrieves the list of all till payments for the given `companyId`.
 
 GET /api/v1/till/all
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                         | Required |
-|-------------|----------|-------------------------------------|----------|
-| `companyId` | `string` | The ID of the company to fetch till payments for. | ✅       |
+| Parameter   | Type     | Description                                       | Required |
+| ----------- | -------- | ------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company to fetch till payments for. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Interactive API
 
@@ -37,17 +35,87 @@ GET /api/v1/till/all
   method="GET"
   url="https://api.kiotapay.co/api/v1/till/all"
   queryParameters={[
-    {
-      name: "companyId",
-      type: "string",
-      description: "The ID of the company to fetch till payments for.",
-      required: true,
-      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-    }
-  ]}
+  {
+    name: "companyId",
+    type: "string",
+    description: "The ID of the company to fetch till payments for.",
+    required: true,
+    example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+  }
+]}
 />
 
 ## Example Curl Request
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+```
+
+**Sample Response**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": [
+        {
+            "id": 2,
+            "amount": 100.0,
+            "uuid": "bdfe5633-50bc-4a68-af62-bd18067f3440",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "accountNumber": "435567676",
+            "businessNumber": "12345",
+            "remarks": "Here are the remarks",
+            "occasion": "Here is the occasion",
+            "originatorConversationId": "02047c3a-f99e-462e-88d6-f82a608cc017",
+            "conversationId": "12345677dfdf89099B3",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-24T17:42:59.589984",
+            "updatedAt": "2025-01-24T17:42:59.589984",
+            "status": "FAILED",
+            "responseCode": 0,
+            "receiverName": null,
+            "transactionReceipt": null,
+            "responseDescription": null
+        },
+        {
+            "id": 1,
+            "amount": 1000.0,
+            "uuid": "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57",
+            "organisation": {
+                "id": 2,
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225"
+            },
+            "accountNumber": "435567676",
+            "businessNumber": "12345",
+            "remarks": "Here are the remarks",
+            "occasion": "Here is the occasion",
+            "originatorConversationId": "10721650-d5f0-4dac-8d17-cb3b74df34c8",
+            "conversationId": "AG_20230420_2010759fd5662ef6d054",
+            "callbackUrl": "https://kiotapay.co.ke",
+            "createdAt": "2025-01-24T17:10:30.65054",
+            "updatedAt": "2025-01-24T17:10:30.65054",
+            "status": "PENDING",
+            "responseCode": 0,
+            "receiverName": null,
+            "transactionReceipt": null,
+            "responseDescription": "Accept the service request successfully."
+        }
+    ]
+}
+```

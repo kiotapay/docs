@@ -7,38 +7,37 @@ openapi: 'GET /api/v1/paybill/status'
 
 This API retrieves the status of a specific Paybill transaction based on the `requestId`.
 
----
+***
 
 ## **Endpoint**
 
 `GET /api/v1/paybill/status`
 
----
+***
 
 ## **Base URL**
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
----
+***
 
 ## **Query Parameters**
 
-| Parameter    | Type     | Description                                      | Required |
-|--------------|----------|--------------------------------------------------|----------|
-| `companyId`  | `string` | The ID of the company associated with the transaction. | ✅       |
-| `requestId`  | `string` | The unique identifier for the specific transaction.   | ✅       |
+| Parameter   | Type     | Description                                            | Required |
+| ----------- | -------- | ------------------------------------------------------ | -------- |
+| `companyId` | `string` | The ID of the company associated with the transaction. | ✅        |
+| `requestId` | `string` | The unique identifier for the specific transaction.    | ✅        |
 
----
+***
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-
----
+***
 
 ## **Example Request**
 
@@ -47,3 +46,20 @@ This API retrieves the status of a specific Paybill transaction based on the `re
 ```bash
 curl --location --request GET 'https://api.kiotapay.co/api/v1/paybill/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=4f88dd2e-c4b4-4a3f-9605-1679686a6641' \
 --header 'Content-Type: application/json'
+```
+
+**Sample Body**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": {
+        "accountNumber": "22442244",
+        "businessNumber": "2232334",
+        "requestId": "4f88dd2e-c4b4-4a3f-9605-1679686a6641",
+        "amount": 1000.0,
+        "status": "PENDING"
+    }
+}
+```

@@ -11,32 +11,59 @@ This API allows a company to create a new spending transaction using their till 
 
 POST /api/v1/till
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                          | Required |
-|-------------|----------|--------------------------------------|----------|
-| `companyId` | `string` | The ID of the company initiating the transaction. | ✅       |
+| Parameter   | Type     | Description                                       | Required |
+| ----------- | -------- | ------------------------------------------------- | -------- |
+| `companyId` | `string` | The ID of the company initiating the transaction. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Request Body
 
 ```json
 {
-  "phoneNumber": "254745362174",
-  "amount": 1000,
-  "remarks": "Here are the remarks",
-  "occasion": "Here is the occasion",
-  "callbackUrl": "https://kiotapay.co.ke"
+    "businessNumber":"12345",
+    "accountNumber":"435567676",
+    "amount":100,
+    "remarks":"Here are the remarks",
+    "occasion":"Here is the occasion",
+    "callbackUrl":"https://kiotapay.co.ke"
 }
+```
+
+**Explanation**
+
+| Field          | Type   | Description                                                                                         |
+| -------------- | ------ | --------------------------------------------------------------------------------------------------- |
+| businessNumber | String | The shortcode to which money will be moved                                                          |
+| accountNumber  | String | &#xA;The account number to be associated with the payment. Up to 13 characters.                     |
+| amount         | Number | The transaction amount in Kenyan Currency.                                                          |
+| remarks        | String | Any additional information to be associated with the transaction. It should be upto 100 characters. |
+| occasion       | String | Any additional information to be associated with the transaction. It should be upto 100 characters. |
+| callbackUrl    | String | A valid **POST**  url where the callback will be sent                                               |
+
+**Sample Response**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "requestId": "89720296-239a-4391-9ecd-c4ca4d2eded0",
+        "accountNumber": "435567676",
+        "businessNumber": "12345",
+        "amount": 100.0,
+        "status": "PENDING"
+    }
+}
+```

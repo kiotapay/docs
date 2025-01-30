@@ -12,25 +12,23 @@ This API retrieves the details of a specific till transaction based on the `comp
 
 GET /api/v1/till/single
 
-
 ### Base URL
 
-`https://api.kiotapay.co`
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
 
 ## Query Parameters
 
-| Parameter   | Type     | Description                          | Required |
-|-------------|----------|--------------------------------------|----------|
-| `companyId` | `string` | The ID of the company initiating the request. | ✅       |
-| `requestId` | `string` | The unique ID of the request for the till transaction. | ✅       |
+| Parameter   | Type     | Description                                            | Required |
+| ----------- | -------- | ------------------------------------------------------ | -------- |
+| `companyId` | `string` | The ID of the company initiating the request.          | ✅        |
+| `requestId` | `string` | The unique ID of the request for the till transaction. | ✅        |
 
 ## **Request Headers**
 
-| Key             | Value                  | Required | Description |
-|----------------|------------------------|----------|-------------|
-| `Content-Type` | `application/json`      | ✅       | Specifies that the request body is in JSON format. |
-| `Authorization` | `Bearer <your-token>`  | ✅       | API authentication token. Replace `<your-token>` with a valid JWT. |
-
+| Key             | Value                 | Required | Description                                                        |
+| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Interactive API
 
@@ -38,24 +36,63 @@ GET /api/v1/till/single
   method="GET"
   url="https://api.kiotapay.co/api/v1/till/single"
   queryParameters={[
-    {
-      name: "companyId",
-      type: "string",
-      description: "The ID of the company initiating the request.",
-      required: true,
-      example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-    },
-    {
-      name: "requestId",
-      type: "string",
-      description: "The unique ID of the request for the till transaction.",
-      required: true,
-      example: "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57"
-    }
-  ]}
+  {
+    name: "companyId",
+    type: "string",
+    description: "The ID of the company initiating the request.",
+    required: true,
+    example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
+  },
+  {
+    name: "requestId",
+    type: "string",
+    description: "The unique ID of the request for the till transaction.",
+    required: true,
+    example: "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57"
+  }
+]}
 />
 
 ## Example Curl Request
 
 ```bash
 curl --location 'https://api.kiotapay.co/api/v1/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
+```
+
+**Sample Response**
+
+```json
+{
+    "status": 200,
+    "message": "Success",
+    "data": {
+        "id": 1,
+        "amount": 1000.0,
+        "uuid": "20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57",
+        "organisation": {
+            "id": 2,
+            "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+            "name": "Maina Properties Limited Ke",
+            "phoneNumber": "254745362174",
+            "email": "maina@gmail.com",
+            "uniqueReference": "4780606",
+            "createdAt": "2025-01-24T13:35:12.151225",
+            "updatedAt": "2025-01-24T13:35:12.151225"
+        },
+        "accountNumber": "435567676",
+        "businessNumber": "12345",
+        "remarks": "Here are the remarks",
+        "occasion": "Here is the occasion",
+        "originatorConversationId": "10721650-d5f0-4dac-8d17-cb3b74df34c8",
+        "conversationId": "AG_20230420_2010759fd5662ef6d054",
+        "callbackUrl": "https://kiotapay.co.ke",
+        "createdAt": "2025-01-24T17:10:30.65054",
+        "updatedAt": "2025-01-24T17:10:30.65054",
+        "status": "PENDING",
+        "responseCode": 0,
+        "receiverName": null,
+        "transactionReceipt": null,
+        "responseDescription": "Accept the service request successfully."
+    }
+}
+```
