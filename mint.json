@@ -32,16 +32,7 @@
         "introduction",
         "quickstart",
         {
-          "group": "Development Resources",
-          "pages": [
-            "development",
-            "essentials/markdown",
-            "essentials/code",
-            "essentials/images",
-            "essentials/settings",
-            "essentials/navigation",
-            "essentials/reusable-snippets"
-          ]
+          "group": "Development Resources"
         },
         {
           "group": "API Reference",
