@@ -1,0 +1,111 @@
+---
+title: 'Kiotapay API Error Documentation'
+description: 'Kiotapay API Error Documentation.'
+---
+
+Welcome to the Kiotapay API Error Documentation. This guide outlines the various error responses you may encounter when integrating with our API. Each error is accompanied by a code, description, and potential solutions to help you debug and resolve issues quickly.
+
+## Error Format
+All API responses for errors adhere to the following JSON format:
+
+```json
+{
+  "error": {
+    "code": "string",
+    "message": "string",
+    "details": "string"
+  }
+}
+```
+
+| Field     | Type   | Description                          |
+|-----------|--------|--------------------------------------|
+| `errorCode`    | string | A unique error code identifying the issue. |
+| `message` | string | A short description of the error.         |
+| `details` | string | Additional details about the error, if available. |
+| `statusCode` | string | A HTTP status code. |
+---
+
+## Error Codes
+The following sections categorize error codes by their type.
+
+### 1. Authentication & Authorization Errors
+These errors occur when authentication or authorization fails.
+
+| Code                | HTTP Status | Message                         | Description                          | Potential Solution                   |
+|---------------------|-------------|---------------------------------|--------------------------------------|---------------------------------------|
+| `AUTH_INVALID_TOKEN`| 401         | Invalid authentication token    | The provided token is expired or invalid. | Refresh or generate a new token.      |
+| `AUTH_MISSING_TOKEN`| 401         | Authentication token missing    | No authentication token was provided. | Ensure the `Authorization` header contains a valid token. |
+| `AUTH_FORBIDDEN`    | 403         | Access denied                   | You do not have the required permissions to access this resource. | Check your user roles and permissions. |
+
+### 2. Request Errors
+These errors are related to malformed or invalid API requests.
+
+| Code                | HTTP Status | Message                         | Description                          | Potential Solution                   |
+|---------------------|-------------|---------------------------------|--------------------------------------|---------------------------------------|
+| `REQ_BAD_REQUEST`   | 400         | Bad request                     | The request is invalid or improperly formatted. | Verify the request payload and parameters. |
+| `REQ_MISSING_FIELD` | 400         | Missing required field          | A required field is missing in the request. | Check the API documentation for required fields. |
+| `REQ_INVALID_FIELD` | 400         | Invalid field value             | A field value is invalid or incorrectly formatted. | Ensure all field values conform to the expected data types and formats. |
+
+### 3. Resource Errors
+These errors occur when accessing resources that do not exist or are unavailable.
+
+| Code                | HTTP Status | Message                         | Description                          | Potential Solution                   |
+|---------------------|-------------|---------------------------------|--------------------------------------|---------------------------------------|
+| `RESOURCE_NOT_FOUND`| 404         | Resource not found              | The requested resource does not exist. | Check the resource identifier or endpoint URL. |
+| `RESOURCE_LOCKED`   | 423         | Resource is locked              | The resource is temporarily locked.   | Retry after some time or contact support. |
+
+### 4. Payment Errors
+These errors occur during payment operations.
+
+| Code                | HTTP Status | Message                         | Description                          | Potential Solution                   |
+|---------------------|-------------|---------------------------------|--------------------------------------|---------------------------------------|
+| `PAYMENT_FAILED`    | 402         | Payment failed                  | The payment process could not be completed. | Check payment details and retry. |
+| `PAYMENT_LIMIT_EXCEEDED` | 403     | Payment limit exceeded          | The payment exceeds the allowed limit. | Adjust the payment amount or contact support. |
+| `INSUFFICIENT_FUNDS`| 402         | Insufficient funds              | The account has insufficient funds.   | Ensure the account has sufficient balance. |
+
+### 5. Server Errors
+These errors indicate issues on the Kiotapay platform.
+
+| Code                | HTTP Status | Message                         | Description                          | Potential Solution                   |
+|---------------------|-------------|---------------------------------|--------------------------------------|---------------------------------------|
+| `SERVER_ERROR`      | 500         | Internal server error           | An unexpected error occurred on the server. | Retry the request or contact support. |
+| `SERVICE_UNAVAILABLE` | 503       | Service unavailable             | The service is temporarily unavailable. | Retry after a short delay.            |
+| `TIMEOUT_ERROR`     | 504         | Request timeout                 | The request took too long to process. | Optimize the request or retry later.  |
+
+---
+
+## HTTP Status Codes Overview
+The following table summarizes the HTTP status codes used by the Kiotapay API:
+
+| HTTP Status Code | Description                             |
+|------------------|-----------------------------------------|
+| 200              | OK - The request was successful.        |
+| 201              | Created - A new resource was successfully created. |
+| 400              | Bad Request - The request was invalid.  |
+| 401              | Unauthorized - Authentication is required. |
+| 403              | Forbidden - Access is denied.           |
+| 404              | Not Found - The requested resource does not exist. |
+| 500              | Internal Server Error - A server error occurred. |
+| 503              | Service Unavailable - The server is temporarily unavailable. |
+
+---
+
+## Handling Errors
+When an error occurs, follow these steps to diagnose and resolve it:
+
+1. **Check the error code and message:** Refer to the error tables above for guidance.
+2. **Review the request:** Ensure the request payload, headers, and parameters are correct.
+3. **Consult the API documentation:** Verify that you are using the correct endpoints and request formats.
+4. **Retry if applicable:** For temporary errors (e.g., `SERVICE_UNAVAILABLE`), retry the request after a short delay.
+5. **Contact support:** If the issue persists, reach out to Kiotapay support with the error details.
+
+---
+
+## Contact Support
+For further assistance, please contact [Kiotapay Support](mailto:apps@kiotapay.com) or visit our [Developer Portal](#).
+
+---
+
+This documentation is designed to help you effectively integrate with the Kiotapay API. By following these guidelines, you can handle errors efficiently and minimize downtime for your application.
+

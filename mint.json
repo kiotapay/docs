@@ -74,6 +74,12 @@
                 "api-reference/endpoint/stk/single",
                 "api-reference/endpoint/stk/all"
               ]
+            },
+             {
+              "group": "Errors",
+              "pages": [
+                "api-reference/endpoint/errors",
+              ]
             }
           ]
         }
