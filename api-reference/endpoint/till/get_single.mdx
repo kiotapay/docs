@@ -1,7 +1,7 @@
 ---
 title: Single Till Transaction API
 description: Fetches details of a single till transaction using the `companyId` and `requestId`.
-openapi: 'GET /api/v1/till/single'
+openapi: 'GET /api/sandbox/v1/till/single'
 ---
 
 # Single Till Transaction API
@@ -10,7 +10,7 @@ This API retrieves the details of a specific till transaction based on the `comp
 
 ## Endpoint
 
-GET /api/v1/till/single
+GET /api/sandbox/v1/till/single
 
 ### Base URL
 
@@ -34,7 +34,7 @@ GET /api/v1/till/single
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/till/single"
+  url="https://api.kiotapay.co/api/sandbox/v1/till/single"
   queryParameters={[
   {
     name: "companyId",
@@ -56,7 +56,7 @@ GET /api/v1/till/single
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/till/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
 ```
 
 **Sample Response**

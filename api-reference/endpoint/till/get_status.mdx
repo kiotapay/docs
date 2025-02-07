@@ -1,7 +1,7 @@
 ---
 title: Till Status API
 description: Endpoint to fetch the status of a till transaction using the `requestId` and `companyId`.
-openapi: 'GET /api/v1/till/status'
+openapi: 'GET /api/sandbox/v1/till/status'
 ---
 
 # Till Status API
@@ -10,7 +10,7 @@ This API allows a company to fetch the status of a specific till transaction usi
 
 ## Endpoint
 
-GET /api/v1/till/status
+GET /api/sandbox/v1/till/status
 
 ### Base URL
 
@@ -34,7 +34,7 @@ GET /api/v1/till/status
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/auth/spending/till/status"
+  url="https://api.kiotapay.co/api/sandbox/v1/auth/spending/till/status"
   queryParameters={[
   {
     name: "companyId",
@@ -56,7 +56,7 @@ GET /api/v1/till/status
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/auth/spending/till/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/auth/spending/till/status?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=20f6da4c-f1fa-4af0-9e5c-72c4e7ac8f57'
 ```
 
 **Sample Response**

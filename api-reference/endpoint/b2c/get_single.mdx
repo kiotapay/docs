@@ -1,7 +1,7 @@
 ---
 title: Get Single Send Money Item API
 description: Fetches a single send money transaction for a specific `companyId` and `requestId`.
-openapi: 'GET /api/v1/send-money/single'
+openapi: 'GET /api/sandbox/v1/send-money/single'
 ---
 
 # Get Single Send Money Item API
@@ -10,7 +10,7 @@ This API retrieves a single send money transaction using the given `companyId` a
 
 ## Endpoint
 
-GET /api/v1/send-money/single
+GET /api/sandbox/v1/send-money/single
 
 ### Base URL
 
@@ -34,7 +34,7 @@ GET /api/v1/send-money/single
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/send-money/single"
+  url="https://api.kiotapay.co/api/sandbox/v1/send-money/single"
   queryParameters={[
   {
     name: "companyId",
@@ -56,7 +56,7 @@ GET /api/v1/send-money/single
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/send-money/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=cd3e5b37-8f23-465e-a720-b2a78f2b62c1'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/send-money/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=cd3e5b37-8f23-465e-a720-b2a78f2b62c1'
 ```
 
 **Example Response**

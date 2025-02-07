@@ -1,7 +1,7 @@
 ---
 title: Get All Till Payments API
 description: Fetches all till payments for a specific company using the `companyId`.
-openapi: 'GET /api/v1/till/all'
+openapi: 'GET /api/sandbox/v1/till/all'
 ---
 
 # Get All Till Payments API
@@ -10,7 +10,7 @@ This API retrieves the list of all till payments for the given `companyId`.
 
 ## Endpoint
 
-GET /api/v1/till/all
+GET /api/sandbox/v1/till/all
 
 ### Base URL
 
@@ -33,7 +33,7 @@ GET /api/v1/till/all
 
 <InteractiveApi
   method="GET"
-  url="https://api.kiotapay.co/api/v1/till/all"
+  url="https://api.kiotapay.co/api/sandbox/v1/till/all"
   queryParameters={[
   {
     name: "companyId",
@@ -48,7 +48,7 @@ GET /api/v1/till/all
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/v1/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/till/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
 ```
 
 **Sample Response**
