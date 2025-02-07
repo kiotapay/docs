@@ -32,9 +32,6 @@
         "introduction",
         "quickstart",
         {
-          "group": "Development Resources"
-        },
-        {
           "group": "API Reference",
           "pages": [
             "api-reference/introduction",
