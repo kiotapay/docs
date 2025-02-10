@@ -1,12 +1,12 @@
 ---
 title: Till Status API
-description: Endpoint to fetch the status of a till transaction using the `requestId` and `companyId`.
+description: Endpoint to fetch the status of a till transaction using the `requestId` .
 openapi: 'GET /api/sandbox/v1/till/status'
 ---
 
 # Till Status API
 
-This API allows a company to fetch the status of a specific till transaction using the `companyId` and `requestId`.
+This API allows a company to fetch the status of a specific till transaction using the  `requestId`.
 
 ## Endpoint
 
@@ -20,7 +20,7 @@ GET /api/sandbox/v1/till/status
 
 | Parameter   | Type     | Description                                                         | Required |
 | ----------- | -------- | ------------------------------------------------------------------- | -------- |
-| `companyId` | `string` | The ID of the company initiating the request.                       | ✅        |
+                      | ✅        |
 | `requestId` | `string` | The unique ID of the request for which the status is being checked. | ✅        |
 
 ## **Request Headers**

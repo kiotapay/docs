@@ -1,12 +1,12 @@
 ---
 title: Get Single Send Money Item API
-description: Fetches a single send money transaction for a specific `companyId` and `requestId`.
+description: Fetches a single send money transaction for a specific  `requestId`.
 openapi: 'GET /api/sandbox/v1/send-money/single'
 ---
 
 # Get Single Send Money Item API
 
-This API retrieves a single send money transaction using the given `companyId` and `requestId`.
+This API retrieves a single send money transaction using a `requestId`.
 
 ## Endpoint
 
@@ -37,13 +37,6 @@ GET /api/sandbox/v1/send-money/single
   url="https://api.kiotapay.co/api/sandbox/v1/send-money/single"
   queryParameters={[
   {
-    name: "companyId",
-    type: "string",
-    description: "The ID of the company to fetch the send money transaction for.",
-    required: true,
-    example: "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4"
-  },
-  {
     name: "requestId",
     type: "string",
     description: "The unique ID of the specific send money transaction.",
@@ -56,7 +49,7 @@ GET /api/sandbox/v1/send-money/single
 ## Example Curl Request
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/sandbox/v1/send-money/single?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4&requestId=cd3e5b37-8f23-465e-a720-b2a78f2b62c1'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/send-money/single?requestId=cd3e5b37-8f23-465e-a720-b2a78f2b62c1'
 ```
 
 **Example Response**

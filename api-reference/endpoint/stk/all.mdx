@@ -21,13 +21,6 @@ This API retrieves all STK (Sim Toolkit) collection transactions for a specific 
 
 ***
 
-## **Query Parameters**
-
-| Parameter   | Type     | Description                                                     | Required |
-| ----------- | -------- | --------------------------------------------------------------- | -------- |
-| `companyId` | `string` | The ID of the company whose STK transactions are being queried. | ✅        |
-
-***
 
 ## **Request Headers**
 
@@ -43,7 +36,7 @@ This API retrieves all STK (Sim Toolkit) collection transactions for a specific 
 ### **cURL Command**
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/sandbox/v1/stk/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4' \
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/stk/all' \
 --header 'Content-Type: application/json'
 ```
 

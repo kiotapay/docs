@@ -21,13 +21,6 @@ This API retrieves all Paybill transactions for a specific company.
 
 ***
 
-## **Query Parameters**
-
-| Parameter   | Type     | Description                                                 | Required |
-| ----------- | -------- | ----------------------------------------------------------- | -------- |
-| `companyId` | `string` | The ID of the company whose transactions are being queried. | ✅        |
-
-***
 
 ## **Request Headers**
 
@@ -43,7 +36,7 @@ This API retrieves all Paybill transactions for a specific company.
 ### **cURL Command**
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/sandbox/v1/paybill/all?companyId=4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4'
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/paybill/all'
 ```
 
 **Sample Body**

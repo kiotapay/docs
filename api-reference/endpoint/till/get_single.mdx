@@ -1,12 +1,12 @@
 ---
 title: Single Till Transaction API
-description: Fetches details of a single till transaction using the `companyId` and `requestId`.
+description: Fetches details of a single till transaction using the `requestId`.
 openapi: 'GET /api/sandbox/v1/till/single'
 ---
 
 # Single Till Transaction API
 
-This API retrieves the details of a specific till transaction based on the `companyId` and `requestId` provided.
+This API retrieves the details of a specific till transaction based on the  `requestId` provided.
 
 ## Endpoint
 
@@ -19,8 +19,7 @@ GET /api/sandbox/v1/till/single
 ## Query Parameters
 
 | Parameter   | Type     | Description                                            | Required |
-| ----------- | -------- | ------------------------------------------------------ | -------- |
-| `companyId` | `string` | The ID of the company initiating the request.          | ✅        |
+| ----------- | -------- | ------------------------------------------------------ | -------- |        |
 | `requestId` | `string` | The unique ID of the request for the till transaction. | ✅        |
 
 ## **Request Headers**
