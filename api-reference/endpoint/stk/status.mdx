@@ -1,34 +1,33 @@
 ---
-title: 'Get STK Transaction Status'
-openapi: 'GET /api/sandbox/v1/stk/status'
+title: "Get STK Transaction Status"
+openapi: "GET /api/sandbox/v1/stk/status"
 ---
 
 # Get STK Transaction Status API
 
 This API retrieves the status of a single STK transaction using the provided  `requestId`.
 
-***
+---
 
 ## **Endpoint**
 
 `GET /api/sandbox/v1/stk/status`
 
-***
+---
 
 ## **Base URL**
 
 [`https://api.kiotapay.co`](https://api.kiotapay.co)
 
-***
+---
 
 ## **Query Parameters**
 
-| Parameter   | Type     | Description                                            | Required |
-| ----------- | -------- | ------------------------------------------------------ | -------- |
-        |
-| `requestId` | `string` | The unique identifier for the specific transaction.    | ✅        |
+<table style="min-width: 100px">
+<colgroup><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Parameter</p></th><th colspan="1" rowspan="1"><p>Type</p></th><th colspan="1" rowspan="1"><p>Description</p></th><th colspan="1" rowspan="1"><p>Required</p></th></tr><tr><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">requestId</code></p></td><td colspan="1" rowspan="1"><p><code spellcheck="false">string</code></p></td><td colspan="1" rowspan="1"><p>The unique identifier for the specific transaction.</p></td><td colspan="1" rowspan="1"><p>✅</p></td></tr></tbody>
+</table>
 
-***
+---
 
 ## **Request Headers**
 
@@ -37,14 +36,14 @@ This API retrieves the status of a single STK transaction using the provided  `r
 | `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
 | `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-***
+---
 
 ## **Example Request**
 
 ### **cURL Command**
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/sandbox/api/v1/stk/status?requestId=43d23a1d-0476-4d49-a6eb-0a402c50d968' \
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/stk/status?requestId=43d23a1d-0476-4d49-a6eb-0a402c50d968' \
 --header 'Content-Type: application/json'
 ```
 
