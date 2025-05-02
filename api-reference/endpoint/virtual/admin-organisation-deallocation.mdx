@@ -9,24 +9,24 @@ GET /api/sandbox/v1/de-allocations/org/all/admins
 
 ### Base URL
 
-⁠ https://api.kiotapay.co ⁠
+`https://api.kiotapay.co`
 
 ## Query Parameters
 
 | Parameter              | Type     | Description                                            | Required |
 | :--------------------- | :------- | :----------------------------------------------------- | :------- |
-| ⁠ parentOrganisationId ⁠ | ⁠ string ⁠ | The ID of the company whose allocations are requested. | ✅        |
+| `parentOrganisationId` | `string` | The ID of the company whose allocations are requested. | ✅        |
 
-## *Request Headers*
+## **Request Headers**
 
 | Key             | Value                 | Required | Description                                                        |
 | :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
-| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
-| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## 
 
-*Sample Response Body*
+**Sample Response Body**
 
 ```json
 {
@@ -66,4 +66,3 @@ GET /api/sandbox/v1/de-allocations/org/all/admins
     ]
 }
 ```
- ⁠

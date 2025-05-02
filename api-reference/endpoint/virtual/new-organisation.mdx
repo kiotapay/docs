@@ -5,21 +5,20 @@ description: "This API allows a company to create a child company. "
 
 ## Endpoint
 
-POST /api/sandbox/v1/multiaccount/new/organisation
+POST /api/sandbox/v1/multiaccount
 
 ### Base URL
 
-⁠ https://api.kiotapay.co ⁠
+`https://api.kiotapay.co`
 
-## *Request Headers*
+## **Request Headers**
 
 | Key             | Value                 | Required | Description                                                        |
 | :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
-| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
-| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Request Body
-
 
 ```json
 {
@@ -36,20 +35,20 @@ POST /api/sandbox/v1/multiaccount/new/organisation
     "email":"john12@gmail.com"
     }
 }
- ⁠
+```
 
-*Explanation*
+**Explanation**
 
 | Field | Type   | Description                                                             |
 | :---- | :----- | :---------------------------------------------------------------------- |
 | name  | String | The sub account name                                                    |
 | email | string | The sub account email address.                                          |
 | phone | String | A sub account phone number .                                            |
-| user  | json   | ⁠ Expected user details which will be tied to the new organisation user ⁠ |
+| user  | json   | `Expected user details which will be tied to the new organisation user` |
 
-*Sample Response Body*
+**Sample Response Body**
 
-⁠ json
+```json
 {
     "status": 201,
     "message": "Created Successfully",
@@ -80,4 +79,3 @@ POST /api/sandbox/v1/multiaccount/new/organisation
     }
 }
 ```
- ⁠

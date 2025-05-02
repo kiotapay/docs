@@ -9,17 +9,16 @@ POST /api/sandbox/v1/allocations/new
 
 ### Base URL
 
-⁠ https://api.kiotapay.co ⁠
+`https://api.kiotapay.co`
 
-## *Request Headers*
+## **Request Headers**
 
 | Key             | Value                 | Required | Description                                                        |
 | :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
-| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
-| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ## Request Body
-
 
 ```json
 {
@@ -27,9 +26,9 @@ POST /api/sandbox/v1/allocations/new
     "toOrganisationId":"b2f0a5ff-e9d8-4347-b46d-6eee8d195617",
     "amount":20
 }
- ⁠
+```
 
-*Explanation*
+**Explanation**
 
 | Field            | Type   | Description                                             |
 | :--------------- | :----- | :------------------------------------------------------ |
@@ -37,9 +36,9 @@ POST /api/sandbox/v1/allocations/new
 | toOrganisationId | string | The sOrganisation id where the funds will be allocated. |
 | amount           | number | The amount of money to be allocated                     |
 
-*Sample Response Body*
+**Sample Response Body**
 
-⁠ json
+```json
 {
     "status": 201,
     "message": "Created Successfully",
@@ -49,4 +48,4 @@ POST /api/sandbox/v1/allocations/new
         "amount": 20.0
     }
 }
- ⁠```
+```
