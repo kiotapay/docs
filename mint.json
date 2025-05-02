@@ -81,7 +81,7 @@
                 "api-reference/endpoint/virtual/deactivate",
                 "api-reference/endpoint/virtual/new-sub-account",
                 "api-reference/endpoint/virtual/all-parent-sub-accounts",
-                "api-reference/endpoint/virtual/new-allocation",
+                "api-reference/endpoint/virtual/new-allocations",
                 "api-reference/endpoint/virtual/all-sub-accounts-allocation",
                 "api-reference/endpoint/virtual/admin-sub-accounts-allocation",
                 "api-reference/endpoint/virtual/all-single-sub-accounts-allocations",
