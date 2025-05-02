@@ -72,6 +72,15 @@
                 "api-reference/endpoint/stk/all"
               ]
             },
+            {
+              "group": "Multi Accounts (Virtual Accounts)",
+              "pages": [
+                "api-reference/endpoint/virtual/introduction",
+                "api-reference/endpoint/virtual/subscribe",
+                "api-reference/endpoint/virtual/activate",
+                "api-reference/endpoint/virtual/deactivate"
+              ]
+            },
              {
               "group": "Errors",
               "pages": [
