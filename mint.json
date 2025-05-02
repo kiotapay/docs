@@ -74,7 +74,9 @@
             },
             {
               "group": "Multi Accounts (Virtual Accounts)",
-              "pages": [
+              "pages": 
+              
+              [
                 "api-reference/endpoint/virtual/introduction",
                 "api-reference/endpoint/virtual/subscription",
                 "api-reference/endpoint/virtual/activate",
@@ -87,9 +89,8 @@
                 "api-reference/endpoint/virtual/admin-cancel-sub-accounts-allocation",
                 "api-reference/endpoint/virtual/new-deallocation",
                 "api-reference/endpoint/virtual/all-sub-accounts-deallocation",
-                "api-reference/endpoint/virtual/admin-sub-accounts-deallocation",          
-                "api-reference/endpoint/virtual/sub-accounts-wallets-breakdown",
-                
+                "api-reference/endpoint/virtual/admin-sub-accounts-deallocation",    
+                "api-reference/endpoint/virtual/sub-accounts-wallets-breakdown", 
               ]
             },
              {
