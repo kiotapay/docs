@@ -84,12 +84,10 @@
                 "api-reference/endpoint/virtual/new-allocations",
                 "api-reference/endpoint/virtual/all-sub-accounts-allocation",
                 "api-reference/endpoint/virtual/admin-sub-accounts-allocation",
-                "api-reference/endpoint/virtual/all-single-sub-accounts-allocations",
                 "api-reference/endpoint/virtual/admin-cancel-sub-accounts-allocation",
                 "api-reference/endpoint/virtual/new-deallocation",
                  "api-reference/endpoint/virtual/all-sub-accounts-deallocation",
                 "api-reference/endpoint/virtual/admin-sub-accounts-deallocation",
-                "api-reference/endpoint/virtual/all-single-sub-accounts-deallocations"
       
               ]
             },
