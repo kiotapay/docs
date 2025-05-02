@@ -1,11 +1,11 @@
 ---
-title: "Activate Multi Account Subscription"
-description: "This endpoint activates a single organisation multi account subscription    "
+title: "Deactivate Multi Account Subscription"
+description: "This endpoint deactivates multi account subscription but does not close the already created relationship between a parent and all created sub-accounts."
 ---
 
 ## Endpoint
 
-PUT /api/sandbox/v1/multiaccount/activate
+PUT /api/sandbox/v1/multiaccount/de-activate
 
 ### Base URL
 
@@ -18,12 +18,14 @@ PUT /api/sandbox/v1/multiaccount/activate
 | ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
 | ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
 
+## 
+
 *Sample Response Body*
 
 ⁠ json
 {
     "status": 200,
     "message": "Updated Successfully",
-    "data": "subscribed Successfully"
+    "data": "un-subscribed Successfully"
 }
  ⁠
