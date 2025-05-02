@@ -1,0 +1,62 @@
+---
+title: "Sub Organisation Allocations"
+description: "This is all allocations that are done to the organisation itself "
+---
+
+## Endpoint
+
+GET /api/sandbox/v1/allocations/sub/org/all
+
+### Base URL
+
+⁠ https://api.kiotapay.co ⁠
+
+## *Request Headers*
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
+| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+
+## 
+
+*Sample Response Body*
+
+⁠ json
+{
+    "status": 200,
+    "message": "SUCCESS",
+    "data": [
+        {
+            "status": "SUCCESS",
+            "requestId": "906cd2e5-739c-4fc7-9a42-7ae969f254fb",
+            "amount": 10.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "b52a4cef-7b92-4d45-b97b-30c2ccd64795",
+            "amount": 10.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "2d5fa8b1-e8c8-48a2-9e4a-0af37db45dff",
+            "amount": 10.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "f661b647-3dbb-4dbc-b2c4-dc45c3afc42c",
+            "amount": 20.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "3c411912-3581-4e54-b716-6ce896d63ed5",
+            "amount": 20.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "93dc02a1-71f8-447f-bf25-e0acd9f79b70",
+            "amount": 20.0
+        }
+    ]
+}
+ ⁠

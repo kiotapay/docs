@@ -1,0 +1,34 @@
+---
+description: "This API allows a company to subscribe to the  multi account account feature ."
+title: "Multi Account Subscription API"
+---
+
+## Endpoint
+
+POST /api/sandbox/v1/multiaccount/subscribe
+
+### Base URL
+
+⁠ https://api.kiotapay.co ⁠
+
+## *Request Headers*
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
+| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+
+*Sample Response Body*
+
+⁠ json
+{
+    "status": 201,
+    "message": "Created Successfully",
+    "data": {
+        "uuid": "e6c458db-2409-4972-bffb-28684eda1478",
+        "active": true,
+        "createdAt": "2025-04-30T21:42:13.176718900",
+        "updatedAt": "2025-04-30T21:42:13.176718900"
+    }
+}
+ ⁠

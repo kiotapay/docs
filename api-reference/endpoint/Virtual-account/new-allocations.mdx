@@ -1,0 +1,51 @@
+---
+title: "New Organisation to Organisation Allocation"
+description: "This simply allocates funds from one organisation to another. It is done primarily by the Admin/Parent organisation. it increments and decrements the related organisation wallets respectively."
+---
+
+## Endpoint
+
+POST /api/sandbox/v1/allocations/new
+
+### Base URL
+
+⁠ https://api.kiotapay.co ⁠
+
+## *Request Headers*
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| ⁠ Content-Type ⁠  | ⁠ application/json ⁠    | ✅        | Specifies that the request body is in JSON format.                 |
+| ⁠ Authorization ⁠ | ⁠ Bearer <your-token> ⁠ | ✅        | API authentication token. Replace ⁠ <your-token> ⁠ with a valid JWT. |
+
+## Request Body
+
+⁠ json
+{
+    "fromOrganisationId":"4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+    "toOrganisationId":"b2f0a5ff-e9d8-4347-b46d-6eee8d195617",
+    "amount":20
+}
+ ⁠
+
+*Explanation*
+
+| Field            | Type   | Description                                             |
+| :--------------- | :----- | :------------------------------------------------------ |
+| fromOrganisation | String | The Organisation Id where the deduction will happen     |
+| toOrganisationId | string | The sOrganisation id where the funds will be allocated. |
+| amount           | number | The amount of money to be allocated                     |
+
+*Sample Response Body*
+
+⁠ json
+{
+    "status": 201,
+    "message": "Created Successfully",
+    "data": {
+        "status": "SUCCESS",
+        "requestId": "ade82d5a-4ab0-4d96-b855-b7f933336f97",
+        "amount": 20.0
+    }
+}
+ ⁠
