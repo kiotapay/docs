@@ -5,7 +5,7 @@ description: "Description of your new file."
 
 # Get Single Bank (Pesalink) Payment API
 
-This API retrieves the details of all Bank payment for an org by id
+This API retrieves the details of a single Bank payment for an org by id
 
 ---
 
@@ -44,8 +44,9 @@ This API retrieves the details of all Bank payment for an org by id
 ### **cURL Command**
 
 ```bash
-curl --location 'https://api.kiotapay.co/api/sandbox/v1/bank/pesalink/single?requestId=98b66546-0a83-4209-b037-adf5fb78d5ca' \
---header 'Device-Id: example-my-device-id' \
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/bank/pesalink/single?
+requestId=98b66546-0a83-4209-b037-adf5fb78d5ca' \
+--header 'accept: application/json' \
 --header 'Authorization: Bearer token'
 ```
 
