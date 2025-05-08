@@ -1,0 +1,85 @@
+---
+title: "Make a Bank Payment (Pesalink)"
+description: "Description of your new file."
+---
+
+# Bank Payment API
+
+This API allows a company to create a new bank payment transaction using Pesalink.
+
+---
+
+## **Endpoint**
+
+`POST /api/sandbox/v1/bank/pesalink/new`
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+---
+
+## **Request Body**
+
+The body must contain the following fields:
+
+```json
+{
+    "beneficiaryName": "Recipient User",
+    "receiverPhoneNumber": "254728702080",
+    "creditAccountNumber": "01001735202370",
+    "amount": 1000,
+    "narration": "sendToAccount",
+    "callbackUrl": "https://eozwvurcbugqsti.m.pipedream.net"
+}
+```
+
+**Explanation**
+
+| **Field**           | Type   | Description                                                                      |
+| :------------------ | :----- | :------------------------------------------------------------------------------- |
+| beneficiaryName     | String | The **name** associated with the beneficiary (recipient) account number.         |
+| receiverPhoneNumber | String | The **phone number** associated with the beneficiary (recipient) account number. |
+| amount              | Number | The amount to be transacted in the Kenyan Shillings currency.                    |
+| creditAccountNumber | String | The account number that will receive the amount                                  |
+| narration           | String | Additional information about the transaction.                                    |
+| callbackUrl         | String | A valid **POST** URL where payment confirmation will be sent.                    |
+
+**Sample Response Body**
+
+```json
+{
+    "status": 201,
+    "message": "Success",
+    "data": {
+        "requestId": "8fa1fab3-a1d6-41fd-9199-d5517efc0d41",
+        "creditAccountNumber": "01001735202370",
+        "beneficiaryName": "Recipient User",
+        "amount": 1000,
+        "status": "PENDING"
+    }
+}
+```
+
+**Sample Callback Body**
+
+```json
+{
+  "accountNumber": "1234567890",
+  "businessNumber": "9876543210",
+  "requestId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
+  "amount": 1000,
+  "status": "SUCCESS" // SUCCESS, FAILED, PENDING
+}
+```

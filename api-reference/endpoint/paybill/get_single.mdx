@@ -1,34 +1,33 @@
 ---
-title: 'Get Single Paybill Transaction'
-openapi: 'GET /api/sandbox/v1/paybill/single'
+title: "Get Single Paybill Transaction"
+openapi: "GET /api/sandbox/v1/paybill/single"
 ---
 
 # Get Single Paybill Transaction API
 
 This API retrieves the details of a specific Paybill transaction using the provided `requestId`.
 
-***
+---
 
 ## **Endpoint**
 
 `GET /api/sandbox/v1/paybill/single`
 
-***
+---
 
 ## **Base URL**
 
 [`https://api.kiotapay.co`](https://api.kiotapay.co)
 
-***
+---
 
 ## **Query Parameters**
 
-| Parameter   | Type     | Description                                            | Required |
-| ----------- | -------- | ------------------------------------------------------ | -------- |
-        |
-| `requestId` | `string` | The unique identifier for the specific transaction.    | ✅        |
+<table style="min-width: 100px">
+<colgroup><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"><col style="min-width: 25px"></colgroup><tbody><tr><th colspan="1" rowspan="1"><p>Parameter</p></th><th colspan="1" rowspan="1"><p>Type</p></th><th colspan="1" rowspan="1"><p>Description</p></th><th colspan="1" rowspan="1"><p>Required</p></th></tr><tr><td colspan="1" rowspan="1"><p></p></td></tr><tr><td colspan="1" rowspan="1"><p><code spellcheck="false">requestId</code></p></td><td colspan="1" rowspan="1"><p><code spellcheck="false">string</code></p></td><td colspan="1" rowspan="1"><p>The unique identifier for the specific transaction.</p></td><td colspan="1" rowspan="1"><p>✅</p></td></tr></tbody>
+</table>
 
-***
+---
 
 ## **Request Headers**
 
@@ -37,7 +36,7 @@ This API retrieves the details of a specific Paybill transaction using the provi
 | `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
 | `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
 
-***
+---
 
 ## **Example Request**
 

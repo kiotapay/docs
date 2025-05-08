@@ -1,0 +1,89 @@
+---
+title: "Get all Bank Payments (Pesalink)"
+description: "Description of your new file."
+---
+
+# Get All Bank (Pesalink) Payments API
+
+This API retrieves the details of a all Bank payments for an org
+
+---
+
+## **Endpoint**
+
+`GET `/api/sandbox/v1/bank/pesalink/alll
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+---
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+---
+
+## **Example Request**
+
+### **cURL Command**
+
+```bash
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/bank/pesalink/all' \
+--header 'Device-Id: example-my-device-id' \
+--header 'Authorization: Bearer token'
+```
+
+**Sample Response Body**
+
+```json
+{
+    "status": 200,
+    "message": "SUCCESS",
+    "data": [
+        {
+            "uuid": "98b66546-0a83-4209-b037-adf5fb78d5ca",
+            "organisation": {
+                "uuid": "71b22afc-4d17-4d8b-8c6a-0534aa537aba",
+                "name": "Staging User",
+                "phoneNumber": "2547090362174",
+                "email": "staging@gmail.com",
+                "uniqueReference": "8046482",
+                "parent": false
+            },
+            "channel": "PESALINK",
+            "amount": 10.0,
+            "kiotapay_amount": 0.0,
+            "transaction_fee": 0.0,
+            "transaction_amount": 0.0,
+            "bankCode": "1032",
+            "beneficiaryName": "Brian Kisese Musyoki",
+            "creditAccount": "0550179520670",
+            "currency": "KES",
+            "direction": 0,
+            "narration": "sendToAccount",
+            "transactionReference": "20c4397b-4549-42f6-a1c1-5f91d32590ae",
+            "receiverPhoneNumber": "254728762287",
+            "requestId": null,
+            "status": "PENDING",
+            "statusCode": null,
+            "statusDesc": null,
+            "originalRequestID": null,
+            "endToEndID": null,
+            "callbackUrl": "https://eozwvurcbugqsti.m.pipedream.net",
+            "errorCode": null,
+            "errorDesc": null,
+            "createdAt": "2025-04-15T18:48:41.228574",
+            "updatedAt": "2025-04-15T18:48:41.228574"
+        }
+    ]
+}
+```

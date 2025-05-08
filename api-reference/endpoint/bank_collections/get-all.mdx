@@ -1,0 +1,74 @@
+---
+title: "Get All Bank Collection Transactions"
+description: "Description of your new file."
+---
+
+# Get Single Bank Collection API
+
+This API retrieves the details of a all Bank collection payments for an org
+
+---
+
+## **Endpoint**
+
+`GET `/api/sandbox/v1/bank/collection/all
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+---
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+---
+
+## **Example Request**
+
+### **cURL Command**
+
+```bash
+curl --location 'https://api.kiotapay.co/api/sandbox/v1/bank/collection/all' \
+--header 'accept: application/json' \
+--header 'Authorization: Bearer token'
+```
+
+**Sample Response Body**
+
+```json
+{
+    "status": 200,
+    "message": "OK",
+    "data": {
+        "id": 2,
+        "uuid": "e66790a6-779c-4f00-97f3-d4e27be1ded5",
+        "customerid": "69183",
+        "transactionref": "SQ98L42422B",
+        "paymentmode": "PESALINK",
+        "transactiondate": "2025-05-08",
+        "accountnumber": "00304636976350",
+        "amount": "10000",
+        "description": "Payment narration",
+        "organisation": {
+            "uuid": "71b22afc-4d17-4d8b-8c6a-0534aa537aba",
+            "name": "Staging",
+            "phoneNumber": "2547090362174",
+            "environment": "sandbox",
+            "collectionCallbackUrl": null,
+            "parentOrganisation": null,
+            "parent": false
+        },
+        "createdAt": "2025-05-08T00:07:40.894988",
+        "updatedAt": "2025-05-08T00:07:40.894988"
+    }
+}
+```
