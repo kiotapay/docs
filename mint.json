@@ -64,12 +64,27 @@
               ]
             },
             {
-              "group": "Collections (STK Push)",
+              "group": "MPESA Collections (STK Push)",
               "pages": [
                 "api-reference/endpoint/stk/post",
                 "api-reference/endpoint/stk/status",
                 "api-reference/endpoint/stk/single",
                 "api-reference/endpoint/stk/all"
+              ]
+            },
+               {
+              "group": "Bank Collections",
+              "pages": [
+                "api-reference/endpoint/bank_collections/get-single",
+                "api-reference/endpoint/bank_collections/get-all"
+              ]
+            },
+            {
+              "group": "Bank Payouts (Pesalink)",
+              "pages": [
+                "api-reference/endpoint/bank_payouts/pesalink/post",
+                "api-reference/endpoint/bank_payouts/pesalink/get-single",
+                "api-reference/endpoint/bank_payouts/pesalink/get-all"
               ]
             },
             {
