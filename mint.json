@@ -80,7 +80,7 @@
               ]
             },
             {
-              "group": "Bank Payouts (Pesalink)",
+              "group": "Bank Payouts",
               "pages": [
                 "api-reference/endpoint/bank_payouts/pesalink/post",
                 "api-reference/endpoint/bank_payouts/pesalink/get-single",
