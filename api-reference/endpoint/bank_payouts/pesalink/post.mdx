@@ -1,5 +1,5 @@
 ---
-title: "Make a Bank Payment (Pesalink)"
+title: "Make a Bank Payment "
 description: "Description of your new file."
 ---
 
@@ -36,6 +36,7 @@ The body must contain the following fields:
 
 ```json
 {
+    "bankCode": "X2X3",
     "beneficiaryName": "Recipient User",
     "receiverPhoneNumber": "254728702080",
     "creditAccountNumber": "01001735202370",
@@ -54,6 +55,8 @@ The body must contain the following fields:
 | amount              | Number | The amount to be transacted in the Kenyan Shillings currency.                    |
 | creditAccountNumber | String | The account number that will receive the amount                                  |
 | narration           | String | Additional information about the transaction.                                    |
+| bankCode            | String | The **bank code** associated with the beneficiary (recipient) account number.    |
+|                     |        |                                                                                  |
 | callbackUrl         | String | A valid **POST** URL where payment confirmation will be sent.                    |
 
 **Sample Response Body**
