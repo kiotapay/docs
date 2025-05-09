@@ -1,0 +1,81 @@
+---
+title: "New multi account organisation API"
+description: "This API allows a company to create a child company. "
+---
+
+## Endpoint
+
+POST /api/sandbox/v1/multiaccount
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+## Request Body
+
+```json
+{
+    "name":"subaccount",
+    "email":"subacct@gmail.com",
+    "phone":"25475698082",
+    "user":{
+    "userType":"API_USER",
+    "firstName":"jon",
+    "lastName":"doe",
+    "username":"johndoe",
+    "password":"password12",
+    "roles": ["ADMIN"],
+    "email":"john12@gmail.com"
+    }
+}
+```
+
+**Explanation**
+
+| Field | Type   | Description                                                             |
+| :---- | :----- | :---------------------------------------------------------------------- |
+| name  | String | The sub account name                                                    |
+| email | string | The sub account email address.                                          |
+| phone | String | A sub account phone number .                                            |
+| user  | json   | `Expected user details which will be tied to the new organisation user` |
+
+**Sample Response Body**
+
+```json
+{
+    "status": 201,
+    "message": "Created Successfully",
+    "data": {
+        "uuid": "e09a5d6c-7f98-4b47-845d-e8420c012b32",
+        "name": "subaccount",
+        "phoneNumber": "25475698082",
+        "email": "subacct@gmail.com",
+        "uniqueReference": "4780606363",
+        "environment": null,
+        "createdAt": "2025-05-01T08:24:36.00312271",
+        "updatedAt": "2025-05-01T08:24:36.00312271",
+        "collectionCallbackUrl": null,
+        "parentOrganisation": {
+            "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+            "name": "Maina Properties Limited Ke",
+            "phoneNumber": "254745362174",
+            "email": "maina@gmail.com",
+            "uniqueReference": "4780606",
+            "environment": null,
+            "createdAt": "2025-01-24T13:35:12.151225",
+            "updatedAt": "2025-01-24T13:35:12.151225",
+            "collectionCallbackUrl": "https://www.youtube.com/watch?v=1J7wGZEWnMI",
+            "parentOrganisation": null,
+            "parent": true
+        },
+        "parent": false
+    }
+}
+```

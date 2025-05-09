@@ -1,0 +1,47 @@
+---
+title: "All Organisation Allocations"
+description: "This Provides all allocations done by a given organisation"
+---
+
+## Endpoint
+
+GET /api/sandbox/v1/allocations/allocations/org/all
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+## 
+
+**Sample Response Body**
+
+```json
+{
+    "status": 200,
+    "message": "SUCCESS",
+    "data": [
+        {
+            "status": "SUCCESS",
+            "requestId": "82d7b9cb-50b2-4041-96fb-ac81d982aeaa",
+            "amount": 10.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "6e1a1ba7-0413-4179-af02-ddfc999604d1",
+            "amount": 10.0
+        },
+        {
+            "status": "SUCCESS",
+            "requestId": "90d0d582-2c8c-42a3-9f8c-3e3ba3dec992",
+            "amount": 10.0
+        }
+    ]
+}
+```

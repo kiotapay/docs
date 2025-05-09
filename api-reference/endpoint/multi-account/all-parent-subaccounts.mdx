@@ -1,0 +1,57 @@
+---
+title: "All Organisation Sub Accounts Accounts "
+description: "This provides all Sub Accounts created by a parent Organisation"
+---
+
+## Endpoint
+
+GET /api/sandbox/v1/multiaccount/organisation/all
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+## 
+
+**Sample Response Body**
+
+```json
+{
+    "status": 200,
+    "message": "SUCCESS",
+    "data": [
+        {
+            "uuid": "b2f0a5ff-e9d8-4347-b46d-6eee8d195617",
+            "name": "subaccountt",
+            "phoneNumber": "25475698982",
+            "email": "subacct@gmail.com",
+            "uniqueReference": "0129957",
+            "environment": null,
+            "createdAt": "2025-05-01T05:03:52.086189",
+            "updatedAt": "2025-05-01T05:03:52.086189",
+            "collectionCallbackUrl": null,
+            "parentOrganisation": {
+                "uuid": "4d6e1ea9-5ab8-496a-978f-7e9b2bce80c4",
+                "name": "Maina Properties Limited Ke",
+                "phoneNumber": "254745362174",
+                "email": "maina@gmail.com",
+                "uniqueReference": "4780606",
+                "environment": null,
+                "createdAt": "2025-01-24T13:35:12.151225",
+                "updatedAt": "2025-01-24T13:35:12.151225",
+                "collectionCallbackUrl": "https://www.youtube.com/watch?v=1J7wGZEWnMI",
+                "parentOrganisation": null,
+                "parent": true
+            },
+            "parent": false
+        }
+    ]
+}
+```
