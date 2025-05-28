@@ -1,6 +1,6 @@
 ---
-title: 'Send Money B2C Send Money'
-openapi: 'POST /api/sandbox/v1/send-money'
+title: "Send Money B2C Send Money"
+openapi: "POST /api/sandbox/v1/send-money"
 ---
 
 # Send Money API
@@ -14,7 +14,6 @@ POST /api/sandbox/v1/send-money
 ### Base URL
 
 [`https://api.kiotapay.co`](https://api.kiotapay.co)
-
 
 ## **Request Headers**
 
@@ -31,19 +30,29 @@ POST /api/sandbox/v1/send-money
   "amount": 1000,
   "remarks": "Here are the remarks",
   "occasion": "Here is the occasion",
-  "callbackUrl": "https://kiotapay.co.ke"
+  "callbackUrl": "https://kiotapay.co.ke",
+  "currencyCode":"KSH",
+  "firstName":"James",
+  "lastName":"maina",
+  "serviceCode":"TZ-TIGO-B2C",
+  "narration":"MOBILE PAYOUT"
 }
 ```
 
 **Explanation**
 
-| Field       | Type   | Description                                                                                                                  |
-| ----------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| phoneNumber | String | The recipient's phone number in **international format.**  It must  be a **valid registered  Kenyan phone number.**          |
-| amount      | Number | The amount of money to be sent in **Kenyan Shillings (KES)**. Example: `1000`.                                               |
-| remarks     | String | A brief **transaction description** . Example: `"Here are the remarks"`.                                                     |
-| occasion    | String | A short text describing the **purpose of the transaction**. Example: `"Here is the occasion"`                                |
-| callbackUrl | String | A **publicly accessible POST API endpoint** where **transaction results will be sent**. Example: `"https://kiotapay.co.ke"`. |
+| Field        | Type   | Description                                                                                                                                                                                                                      |
+| ------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| phoneNumber  | String | The recipient's phone number in **international format.**  It must  be a **valid registered  Kenyan or Tanzania phone number.**                                                                                                  |
+| amount       | Number | The amount of money to be sent in **all provided currencies(Kenya shillings(KSH), Tanzania shillings(TZS))** . Example: `1000`.<br />For **TZS **The least spending amount should be **1000**  (one thousand Tanzania Shillings) |
+| remarks      | String | A brief **transaction description** . Example: `"Here are the remarks"`. This field is mandatory for Ksh transactions                                                                                                            |
+| occasion     | String | A short text describing the **purpose of the transaction**. Example: `"Here is the occasion"`<br />This field is mandatory for Ksh Transactions                                                                                  |
+| callbackUrl  | String | A **publicly accessible POST API endpoint** where **transaction results will be sent**. Example: `"https://kiotapay.co.ke"`. This is mandatory for both Ksh and Tzs Transactions.                                                |
+| currencyCode | String | This is the field that marks whether the payout is a **Kenyan shilling **or a **Tanzania shilling**. Only two Currencies are allowed at the moment **(TZS or KSH).** It defaults to **KSH** currency code                        |
+| narration    | String | This is a field only mandatory for **Tanzania Shilling **Transaction. It is a short narration of the transaction.                                                                                                                |
+| firstName    | String | This is a field only mandatory for **Tanzania Shilling **Transaction. It marks the first name of the receiver                                                                                                                    |
+| lastName     | String | This is a field only mandatory for **Tanzania Shilling **Transaction. It marks the last name of the receiver                                                                                                                     |
+| serviceCode  | String | This is a field only mandatory for **Tanzania Shilling **Transaction. The only two accepted service code are **TZ-TIGO-B2C, TZ-AIRTEL-B2C.**                                                                                     |
 
 **Sample Response Body**
 
