@@ -1,0 +1,80 @@
+---
+title: "Bank Account Verification"
+description: "Description of your new file."
+---
+
+# Bank Account Verification API
+
+This API allows a company to create a new bank payment transaction.
+
+---
+
+## **Endpoint**
+
+`POST /api/sandbox/v1/bank/payout/verify-account`
+
+---
+
+## **Base URL**
+
+`https://api.kiotapay.co`
+
+---
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+---
+
+## **Request Body**
+
+The body must contain the following fields:
+
+```json
+{
+    "bankCode": "0025",
+    "accountNumber": "00234566690302",
+    "callbackUrl": "https://eozwvurcbugqsti.m.pipedream.net"
+}
+```
+
+**Explanation**
+
+| **Field**     | Type   | Description                                                                   |
+| :------------ | :----- | :---------------------------------------------------------------------------- |
+| accountNumber | String | The account number that will receive the amount                               |
+| bankCode      | String | The **bank code** associated with the beneficiary (recipient) account number. |
+| callbackUrl   | String | A valid **POST** URL where payment confirmation will be sent.                 |
+
+**Sample Response Body**
+
+```json
+{
+    "status": 201,
+    "message": "SUCCESS",
+    "data": {
+        "requestId": "f8193294-9ca0-400e-b9db-ec4282ae6d5b",
+        "creditAccountNumber": "00234566690302",
+        "status": "PENDING",
+        "amount": 0.0
+    }
+}
+```
+
+**Sample Callback Body**
+
+```json
+{
+  "accountNumber": "00234566690302",
+  "requestId": "f8193294-9ca0-400e-b9db-ec4282ae6d5b",
+  "statusCode": "00",
+  "receiverName": "John Doe",
+  "receiverAccount": "0170197176640",
+  "bankCode": "0025",
+  "status": "Success"
+}
+```
