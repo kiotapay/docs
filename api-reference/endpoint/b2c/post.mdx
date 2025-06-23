@@ -35,7 +35,9 @@ POST /api/sandbox/v1/send-money
   "firstName":"James",
   "lastName":"maina",
   "serviceCode":"TZ-TIGO-B2C",
-  "narration":"MOBILE PAYOUT"
+  "narration":"MOBILE PAYOUT",
+	"referenceId":"123456"
+
 }
 ```
 
@@ -53,6 +55,7 @@ POST /api/sandbox/v1/send-money
 | firstName    | String | This is a field only mandatory for **Tanzania Shilling** Transaction. It marks the first name of the receiver                                                                                                                     |
 | lastName     | String | This is a field only mandatory for **Tanzania Shilling** Transaction. It marks the last name of the receiver                                                                                                                      |
 | serviceCode  | String | This is a field only mandatory for **Tanzania Shilling** Transaction. The only two accepted service code are **TZ-TIGO-B2C, TZ-AIRTEL-B2C.**                                                                                      |
+| referenceId  | String | This is an optional field that represents the request ID from your system. It can be used to query the transaction, as it maps to the identifier used in your system.                                                             |
 
 **Sample Response Body**
 
