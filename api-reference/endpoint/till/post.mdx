@@ -1,6 +1,6 @@
 ---
-title: 'Make a till payment'
-openapi: 'POST /api/sandbox/v1/till'
+title: "Make a till payment"
+openapi: "POST /api/sandbox/v1/till"
 ---
 
 # Till New API
@@ -14,7 +14,6 @@ POST /api/sandbox/v1/till
 ### Base URL
 
 [`https://api.kiotapay.co`](https://api.kiotapay.co)
-
 
 ## **Request Headers**
 
@@ -32,20 +31,22 @@ POST /api/sandbox/v1/till
     "amount":100,
     "remarks":"Here are the remarks",
     "occasion":"Here is the occasion",
-    "callbackUrl":"https://kiotapay.co.ke"
+    "callbackUrl":"https://kiotapay.co.ke",
+"referenceId":"1234"
 }
 ```
 
 **Explanation**
 
-| Field          | Type   | Description                                                                                         |
-| -------------- | ------ | --------------------------------------------------------------------------------------------------- |
-| businessNumber | String | The shortcode to which money will be moved                                                          |
-| accountNumber  | String | &#xA;The account number to be associated with the payment. Up to 13 characters.                     |
-| amount         | Number | The transaction amount in Kenyan Currency.                                                          |
-| remarks        | String | Any additional information to be associated with the transaction. It should be upto 100 characters. |
-| occasion       | String | Any additional information to be associated with the transaction. It should be upto 100 characters. |
-| callbackUrl    | String | A valid **POST**  url where the callback will be sent                                               |
+| Field          | Type   | Description                                                                                                                                                           |
+| -------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| businessNumber | String | The shortcode to which money will be moved                                                                                                                            |
+| accountNumber  | String | The account number to be associated with the payment. Up to 13 characters.                                                                                            |
+| amount         | Number | The transaction amount in Kenyan Currency.                                                                                                                            |
+| remarks        | String | Any additional information to be associated with the transaction. It should be upto 100 characters.                                                                   |
+| occasion       | String | Any additional information to be associated with the transaction. It should be upto 100 characters.                                                                   |
+| callbackUrl    | String | A valid **POST**  url where the callback will be sent                                                                                                                 |
+| referenceId    | String | This is an optional field that represents the request ID from your system. It can be used to query the transaction, as it maps to the identifier used in your system. |
 
 **Sample Response Bidy**
 
@@ -73,5 +74,4 @@ POST /api/sandbox/v1/till
   "amount": 1500.75,
   "status": "PENDING" // SUCCESS, FAILED, PENDING
 }
-
 ```

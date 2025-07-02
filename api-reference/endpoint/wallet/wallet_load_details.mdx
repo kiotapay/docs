@@ -1,0 +1,52 @@
+---
+title: "Wallet Load Details"
+description: "This is a wallet load details that provides all required ways of loading the current organisation wallet"
+---
+
+# Wallet Load Details API
+
+This is a wallet load details that provides all required ways of loading the current organisation wallet
+
+## Endpoint
+
+POST /api/sandbox/v1/org/wallet-details
+
+### Base URL
+
+`https://api.kiotapay.co`
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                        |
+| :-------------- | :-------------------- | :------- | :----------------------------------------------------------------- |
+| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+
+**Sample Response Body**
+
+```json
+{
+    "status": 200,
+    "message": "SUCCESS",
+    "data": {
+        "pesalinkDetails": {
+            "accountNumber": "514818046482",
+            "accountName": "Kiotapay",
+            "beneficiaryBank": "I&M Bank",
+            "remarks": "8046482"
+        },
+        "bankDetails": {
+            "beneficiaryName": "Kiotapay",
+            "beneficiaryBank": "I&M Bank",
+            "beneficiaryBranch": "SARIT CENTER",
+            "swiftCode": "IMBLKENA",
+            "beneficiaryAccount": "514818046482",
+            "remarks": "8046482"
+        },
+        "paybillDetails": {
+            "paybillNumber": "4130323",
+            "accountNumber": "8046482"
+        }
+    }
+}
+```

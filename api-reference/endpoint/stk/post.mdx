@@ -42,7 +42,8 @@ The body must contain the following fields:
     "accountReference": "Here is the reference",
     "callbackUrl": "https://kiotapay.co.ke",
 	"currencyCode":"TZS",
-    "channel": "TZ-AIRTEL-C2B"
+    "channel": "TZ-AIRTEL-C2B",
+	"referenceId":"1234"
 }
 ```
 
@@ -57,6 +58,7 @@ The body must contain the following fields:
 | callbackUrl      | String  | A valid **POST**  url where the callback will be sent                                                                                                                                                                                                                                                                                                           |
 | currencyCode     | String  | This refers to the currency for the collection.<br />The only valid codes are **TZS**  and **KSH**. <br />This request defaults to **KSH**.                                                                                                                                                                                                                     |
 | channel          | String  | This is an optional field and is only required for Tanzania collections.<br />It refers to a valid channel. The supported channels are; **TZ-TIGO-C2B and TZ-AIRTEL-C2B.**                                                                                                                                                                                      |
+| referenceId      | String  | This is an optional field that represents the request ID from your system. It can be used to query the transaction, as it maps to the identifier used in your system.                                                                                                                                                                                           |
 
 **Sample Response Body**
 
