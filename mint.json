@@ -88,7 +88,6 @@
               "group": "Sub-Accounts (Virtual Accounts)",
               "pages": 
               [
-                "api-reference/endpoint/virtual/introduction",
                 "api-reference/endpoint/virtual/subscription",
                 "api-reference/endpoint/virtual/activate",
                 "api-reference/endpoint/virtual/deactivate",
