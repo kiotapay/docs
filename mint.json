@@ -29,12 +29,9 @@
     {
       "group": "Payments",
       "pages": [
-        "introduction",
-        "quickstart",
         {
           "group": "API Reference",
           "pages": [
-            "api-reference/introduction",
             "api-reference/endpoint/token",
             {
               "group": "Mobile Money (B2C)",
