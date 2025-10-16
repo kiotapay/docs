@@ -1,0 +1,92 @@
+---
+
+title: 'Get Single TZ Collection'
+openapi: 'GET /api/v1/tz/collections/single'
+--------------------------------------------
+
+# Get Single TZ Collection API
+
+Retrieve the details of a single **TZ collection** transaction using a `requestId` you received when the collection was initiated.
+
+---
+
+## **Endpoint**
+
+`GET /api/v1/tz/collections/single`
+
+---
+
+## **Base URL**
+
+[`https://api.kiotapay.co`](https://api.kiotapay.co)
+
+---
+
+## **Query Parameters**
+
+| Parameter   | Type     | Description                                         | Required |
+| ----------- | -------- | --------------------------------------------------- | -------- |
+| `requestId` | `string` | The unique identifier for the specific transaction. | ✅        |
+
+---
+
+## **Request Headers**
+
+| Key             | Value                 | Required | Description                                                           |
+| --------------- | --------------------- | -------- | --------------------------------------------------------------------- |
+| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT.    |
+| `Device-Id`     | `<your-device-id>`    | ✅        | A unique identifier for the caller device/client.                     |
+| `Content-Type`  | `application/json`    | ℹ️       | Not strictly required for `GET`, but safe to include for consistency. |
+
+---
+
+## **Example Request**
+
+### **cURL**
+
+```bash
+curl --location 'https://api.kiotapay.co/api/v1/tz/collections/single?requestId=cdd7dcaa-e945-44d2-8219-77543ae91d9b' \
+--header 'Device-Id: example-my-device-id' \
+--header 'Authorization: Bearer <your-token>'
+```
+
+---
+
+## **Response**
+
+### **200 OK**
+
+```json
+{
+  "status": 200,
+  "message": "SUCCESS",
+  "data": {
+    "requestId": "cdd7dcaa-e945-44d2-8219-77543ae91d9b",
+    "phoneNumber": "255687720006",
+    "status": "PAYMENT_ACCEPTED",
+    "amount": 2500.0
+  }
+}
+```
+
+### **Response Fields**
+
+| Field              | Type     | Description                                               |
+| ------------------ | -------- | --------------------------------------------------------- |
+| `status`           | `number` | HTTP-like status code for this API response.              |
+| `message`          | `string` | Human-readable message (e.g., `SUCCESS`).                 |
+| `data.requestId`   | `string` | Echo of the requested `requestId`.                        |
+| `data.phoneNumber` | `string` | MSISDN associated with the collection.                    |
+| `data.status`      | `string` | Transaction status (e.g., `PAYMENT_ACCEPTED`, `PENDING`). |
+| `data.amount`      | `number` | Amount of the collection in TZS.                          |
+
+---
+
+## **Errors**
+
+| HTTP Code | Example `message`    | When it happens                                    |
+| --------- | -------------------- | -------------------------------------------------- |
+| `400`     | `INVALID_REQUEST_ID` | `requestId` is missing or malformed.               |
+| `401`     | `UNAUTHORIZED`       | Missing/invalid `Authorization` header.            |
+| `404`     | `NOT_FOUND`          | No transaction found for the provided `requestId`. |
+| `429`     | `RATE_LIMITED`       | Too many requests from the sa                      |
