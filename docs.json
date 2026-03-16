@@ -1,6 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
 
+  "theme": "mint",
+
   "name": "Kiotapay API Documentation",
 
   "logo": {
@@ -130,8 +132,8 @@
         {
           "group": "Web Checkout",
           "pages": [
-            "api-reference/endpoint/checkout/pesalink/post",
-            "api-reference/endpoint/checkout/pesalink/get-single"
+            "api-reference/checkout/create-session",
+            "api-reference/checkout/get-session"
           ]
         },
 
