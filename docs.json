@@ -1,0 +1,152 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+
+  "name": "Kiotapay API Documentation",
+
+  "logo": {
+    "dark": "/logo/logo_alt.png",
+    "light": "/logo/logo_alt.png"
+  },
+
+  "favicon": "/favicon.svg",
+
+  "colors": {
+    "primary": "#0D9373",
+    "light": "#07C983",
+    "dark": "#0D9373"
+  },
+
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:apps@kiotapay.com"
+    }
+  ],
+
+  "topbarCtaButton": {
+    "name": "Kiotapay Website",
+    "url": "https://kiotapay.co.ke"
+  },
+
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction"
+      ]
+    },
+
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/endpoint/token",
+
+        {
+          "group": "Checkout",
+          "pages": [
+            "api-reference/checkout/create-session",
+            "api-reference/checkout/get-session"
+          ]
+        },
+
+        {
+          "group": "Mobile Money (B2C)",
+          "pages": [
+            "api-reference/endpoint/b2c/post",
+            "api-reference/endpoint/b2c/get_single",
+            "api-reference/endpoint/b2c/get_single_tz",
+            "api-reference/endpoint/b2c/get_status",
+            "api-reference/endpoint/b2c/get_all"
+          ]
+        },
+
+        {
+          "group": "Mobile Money (C2B & STK Push)",
+          "pages": [
+            "api-reference/endpoint/stk/post",
+            "api-reference/endpoint/stk/status",
+            "api-reference/endpoint/stk/single",
+            "api-reference/endpoint/stk/get_single_tz",
+            "api-reference/endpoint/stk/all"
+          ]
+        },
+
+        {
+          "group": "Business Payments (Till)",
+          "pages": [
+            "api-reference/endpoint/till/post",
+            "api-reference/endpoint/till/get_status",
+            "api-reference/endpoint/till/get_single",
+            "api-reference/endpoint/till/get_all"
+          ]
+        },
+
+        {
+          "group": "Business Payments (Paybill)",
+          "pages": [
+            "api-reference/endpoint/paybill/post",
+            "api-reference/endpoint/paybill/get_status",
+            "api-reference/endpoint/paybill/get_single",
+            "api-reference/endpoint/paybill/get_all"
+          ]
+        },
+
+        {
+          "group": "Bank Collections",
+          "pages": [
+            "api-reference/endpoint/bank_collections/get-single",
+            "api-reference/endpoint/bank_collections/get-all"
+          ]
+        },
+
+        {
+          "group": "Bank Payouts",
+          "pages": [
+            "api-reference/endpoint/bank_payouts/pesalink/post",
+            "api-reference/endpoint/bank_payouts/pesalink/get-single",
+            "api-reference/endpoint/bank_payouts/pesalink/get-all"
+          ]
+        },
+
+        {
+          "group": "Virtual Accounts",
+          "pages": [
+            "api-reference/endpoint/virtual/subscription",
+            "api-reference/endpoint/virtual/activate",
+            "api-reference/endpoint/virtual/deactivate",
+            "api-reference/endpoint/virtual/new-sub-account",
+            "api-reference/endpoint/virtual/all-parent-sub-accounts",
+            "api-reference/endpoint/virtual/new-allocations",
+            "api-reference/endpoint/virtual/all-sub-accounts-allocation",
+            "api-reference/endpoint/virtual/admin-sub-accounts-allocation",
+            "api-reference/endpoint/virtual/admin-cancel-sub-accounts-allocation",
+            "api-reference/endpoint/virtual/new-deallocation",
+            "api-reference/endpoint/virtual/all-sub-accounts-deallocation",
+            "api-reference/endpoint/virtual/admin-sub-accounts-deallocation",
+            "api-reference/endpoint/virtual/sub-accounts-wallets-breakdown"
+          ]
+        },
+
+        {
+          "group": "Web Checkout",
+          "pages": [
+            "api-reference/endpoint/checkout/pesalink/post",
+            "api-reference/endpoint/checkout/pesalink/get-single"
+          ]
+        },
+
+        {
+          "group": "Errors",
+          "pages": [
+            "api-reference/endpoint/errors"
+          ]
+        }
+      ]
+    }
+  ],
+
+  "footerSocials": {
+    "x": "https://x.com/kiotapay",
+    "linkedin": "https://linkedin.com/company/kiotapay"
+  }
+}
