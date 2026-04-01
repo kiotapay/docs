@@ -42,8 +42,8 @@
           {
             "group": "Checkout",
             "pages": [
-              "api-reference/checkout/create-session",
-              "api-reference/checkout/get-session"
+              "api-reference/checkout/post",
+              "api-reference/checkout/get-single"
             ]
           },
           {
