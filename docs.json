@@ -43,7 +43,7 @@
             "group": "Checkout",
             "pages": [
               "api-reference/checkout/post",
-              "api-reference/checkout/get-single"
+              "api-reference/checkout/get_single"
             ]
           },
           {
