@@ -42,8 +42,8 @@
           {
             "group": "Checkout",
             "pages": [
-              "api-reference/checkout/post",
-              "api-reference/checkout/get_single"
+              "api-reference/endpoint/checkout/post",
+              "api-reference/endpoint/checkout/get_single"
             ]
           },
           {
