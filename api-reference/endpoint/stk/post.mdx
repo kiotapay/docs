@@ -23,10 +23,10 @@ This API allows a company to initiate an STK (Sim Toolkit) push collection for m
 
 ## **Request Headers**
 
-| Key             | Value                 | Required | Description                                                        |
-| --------------- | --------------------- | -------- | ------------------------------------------------------------------ |
-| `Content-Type`  | `application/json`    | ✅        | Specifies that the request body is in JSON format.                 |
-| `Authorization` | `Bearer <your-token>` | ✅        | API authentication token. Replace `<your-token>` with a valid JWT. |
+| Key | Value | Required | Description |
+| --- | --- | --- | --- |
+| `Content-Type` | `application/json` | ✅ | Specifies that the request body is in JSON format. |
+| `Authorization` | `Bearer <your-token>` | ✅ | API authentication token. Replace `<your-token>` with a valid JWT. |
 
 ---
 
@@ -43,22 +43,27 @@ The body must contain the following fields:
     "callbackUrl": "https://kiotapay.co.ke",
 	"currencyCode":"KSH", // KSH, TZS
     "channel": "TZ-AIRTEL-C2B", // Optional
-	"referenceId":"1234" // Optional
+	"referenceId":"1234", // Optional
+    "narration": "MOBILE PAYOUT",//Optional
+    "customerName": "Doris" //Optional
+
 }
 ```
 
 **Explanation**
 
-| Field            | Type    | Description                                                                                                                                                                                                                                                                                                                                                     |
-| ---------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| description      | String  | This is any additional information/comment that can be sent along with the request from your system. Maximum of 13 Characters.                                                                                                                                                                                                                                  |
-| phoneNumber      | String  | A valid phone number where the push will be sent  **It must  be a valid registered Kenyan phone number or a valid registered Tanzanian phone number**.It's Mandatory.                                                                                                                                                                                           |
-| amount           | Integer | This is the Amount transacted normally a numeric value. Money that the customer pays to the Shortcode. Only whole numbers are supported.                                                                                                                                                                                                                        |
-| accountReference | String  | Account Reference: This is an Alpha-Numeric parameter that is defined by your system as an Identifier of the transaction for the CustomerPayBillOnline transaction type. Along with the business name, this value is also displayed to the customer in the STK Pin Prompt message. Maximum of 12 characters.<br />**Mandatory only on if it's a KSH  request.** |
-| callbackUrl      | String  | A valid **POST**  url where the callback will be sent                                                                                                                                                                                                                                                                                                           |
-| currencyCode     | String  | This refers to the currency for the collection.<br />The only valid codes are **TZS**  and **KSH**. <br />This request defaults to **KSH**.                                                                                                                                                                                                                     |
-| channel          | String  | This is an optional field and is only required for Tanzania collections.<br />It refers to a valid channel. The supported channels are; **TZ-TIGO-C2B and TZ-AIRTEL-C2B.**                                                                                                                                                                                      |
-| referenceId      | String  | This is an optional field that represents the request ID from your system. It can be used to query the transaction, as it maps to the identifier used in your system.                                                                                                                                                                                           |
+| Field | Type | Description |
+| --- | --- | --- |
+| description | String | This is any additional information/comment that can be sent along with the request from your system. Maximum of 13 Characters. |
+| phoneNumber | String | A valid phone number where the push will be sent  **It must  be a valid registered Kenyan phone number ,a valid registered Tanzanian phone number** or a **valid registered Ugandan number**. It's Mandatory. |
+| amount | Integer | This is the Amount transacted normally a numeric value. Money that the customer pays to the Shortcode. Only whole numbers are supported. |
+| accountReference | String | Account Reference: This is an Alpha-Numeric parameter that is defined by your system as an Identifier of the transaction for the CustomerPayBillOnline transaction type. Along with the business name, this value is also displayed to the customer in the STK Pin Prompt message. Maximum of 12 characters.<br />**Mandatory only on if it's a KSH  request.** |
+| callbackUrl | String | A valid **POST**  url where the callback will be sent |
+| currencyCode | String | This refers to the currency for the collection.<br />The only valid codes are **TZS** , **KSH** and **UGX** <br />This request defaults to **KSH**. |
+| channel | String | This is an optional field and is only required for **Tanzania** collections.<br />It refers to a valid channel. The supported channels are; **TZ-TIGO-C2B and TZ-AIRTEL-C2B.** |
+| referenceId | String | This is an optional field that represents the request ID from your system. It can be used to query the transaction, as it maps to the identifier used in your system. |
+| narration | String | This is an optional field that is only required for **Uganda** collections. |
+| customerName | String | This is an optional field that is only required for **Uganda** collections. |
 
 **Sample Response Body**
 
@@ -80,7 +85,7 @@ The body must contain the following fields:
 {
   "requestId": "d290f1ee-6c54-4b01-90e6-d701748f0851",
   "status": "SUCCESS", // SUCCESS, FAILED, PENDING
-  "amount": 1500,
+  "amount": 10,
   "phoneNumber": "254728762287"
 }
 ```
