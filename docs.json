@@ -6,7 +6,10 @@
     "dark": "/logo/logo_alt.png",
     "light": "/logo/logo_alt.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/favicon.svg",
+    "dark": "/favicon.svg"
+  },
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",

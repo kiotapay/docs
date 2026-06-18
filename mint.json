@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Kiotapay Starter Kit",
   "logo": {
-    "dark": "/logo/logo_alt.png",
-    "light": "/logo/logo_alt.png"
+    "dark": "/logo/logo.png",
+    "light": "/logo/logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
