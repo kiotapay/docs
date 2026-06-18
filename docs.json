@@ -3,12 +3,12 @@
   "theme": "mint",
   "name": "Kiotapay API Documentation",
   "logo": {
-    "dark": "/logo/logo_alt.png",
-    "light": "/logo/logo_alt.png"
+    "dark": "/logo/logo.png",
+    "light": "/logo/logo.png"
   },
   "favicon": {
-    "light": "/favicon.svg",
-    "dark": "/favicon.svg"
+    "light": "/logo/logo-small.png",
+    "dark": "/logo/logo-small.png"
   },
   "colors": {
     "primary": "#0D9373",
